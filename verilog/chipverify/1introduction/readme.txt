@@ -1,11 +1,5 @@
 ####Summary:####
 
-In this module, our topics are: 
-	1. What is Verilog?
-	2. Introduction to Verilog
-	3. ASIC Design Flow
-	4. Design Abstraction Layers
-
 ####1. What is Verilog?####
 
 Definition:
@@ -55,4 +49,4 @@ Design Styles:
 	1. Top-Down: First define top-level blocks. Then break it into sub-levels. 
 	2. Bottom-up: First we identify building blocks. Then we use them to build the top-level. 
 
-####Note: There are many topics we don't study yet. But we hope to understand those later.####
+####I din't complete reading all the info or doing all the codes, because I belive I need more basics related to Verilog. So having freewill, I decided to move forward." 
