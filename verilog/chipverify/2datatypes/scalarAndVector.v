@@ -1,14 +1,12 @@
 module scalarAndVector;
-	reg a;
-	wire [8*3:0] b;
+	reg [12:0] addr = 3'b010;
 
 	initial begin
-		a=1;
-		b="amir";
-
-		b[1]='a';
-
-		$display("%b %s", a,b);
+		addr[10] = 1'b1;
+		$display("%b", addr);
+		addr[6:2]=5'b111;
+		//addr[2:6]=5'b111; //illegal
+		$display("%b",addr);
 		$finish;
 	end
 endmodule

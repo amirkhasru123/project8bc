@@ -102,3 +102,35 @@ Wire vs reg
 
 ##Code Explanation
 	reg [8*4:1] str="amir" //so 8 byte space for each 4 characters are located.
+	reg [8*4:1] str="amir" //can be declared directly  
+	reg	[8*4:1] dude;
+	dude = "boss"          //can be declared indirectly
+
+##Implementation: string.v
+
+####Scalar & Vector
+	1. 1 bit net or wire
+	2. Multiple bit net or wire is vector
+	3. We can perform operation directly to a bit
+	4. [a:b] can be used to part select
+
+##Code Explanation
+	reg [7:0] addr; //8-bit vector  
+	addr [0] = 1;   //bit one is changed            
+	addr [3] = 0;   //bit four is changed           
+	addr [8] = 1;   //illegal bit manipulation
+	addr [23:16] = 8'h23; // bits 23 to 16 will be replaced by 8'h23
+	
+##scalarAndVector.v
+
+####Verilog Array
+	1. An array declaration of a net or variable can be either scalar or vector.
+	2. Multidimensional arry
+	3. Arrays are allowed in Verilog for reg, wire, integer and real data types.
+
+##Code Implementation
+	reg        y1 [11:0]; //number of var = 12 each 1-bit
+	wire [0:7] y2 [3:0]; //number of var = 4 each 8-bit
+	reg  [7:0] y3 [0:1][0:3]; //2D arry each var 8-bit
+
+##Implementation: array.v
