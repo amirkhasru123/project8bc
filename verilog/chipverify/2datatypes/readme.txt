@@ -134,3 +134,43 @@ Wire vs reg
 	reg  [7:0] y3 [0:1][0:3]; //2D arry each var 8-bit
 
 ##Implementation: array.v
+
+####Net Types
+	1. Net types are used to model physical connections between components in digital circuits.
+	2.  They do not store values, its value is determined by the values of its drivers and the default value of a net is typically 'z' (high impedance) when left unconnected.
+
+##Code Implementation
+	wire = continuous assesment
+	supply0 = ground
+	supply1 = voltage reference to ground
+	uwire = single driver 
+	tri [7:0] bus; //declaring 8-bit tri
+	wor = wired or
+	wand = wired and
+	trior = or with multiple driveris
+	triand = and, multiple drivers
+	tri0 = pulldown
+	tri1 = pullup
+	trireg = not supported by iverilog
+	uwire = single driver
+	supply0 = ground
+	supply1 = voltage
+##Implementation
+	net.v
+
+####Net strength
+	assign  (strength1, strength0) net = expression;
+	supply1, supply0, strong1, strong0, weak1, weak0, pull0, pull1, highz0, highz1
+	1 = true/up
+	0 = false/down
+
+##Code Implementation
+	assign(strong1,strong0) net_example=1'b0; 
+	Here strong0 will be instigated. 
+	assign(weak1, weak0) net_example=1'b1;
+	Here weak1 will be instigated.
+	Strong will override weak. so net_example will hold the value.
+
+##Implementation
+	strength.v
+

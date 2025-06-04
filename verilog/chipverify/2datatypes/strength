@@ -1,0 +1,27 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x6103cd973540 .scope module, "strength_example" "strength_example" 2 1;
+ .timescale 0 0;
+L_0x734859240018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0x734859240060 .functor BUFT 1, C8<331>, C4<0>, C4<0>, C4<0>;
+RS_0x734859289018 .resolv tri, L_0x734859240018, L_0x734859240060;
+v0x6103cd9736d0_0 .net8 "net_example", 0 0, RS_0x734859289018;  2 drivers, strength-aware
+    .scope S_0x6103cd973540;
+T_0 ;
+    %delay 5, 0;
+    %vpi_call 2 9 "$display", "net_example = %b", v0x6103cd9736d0_0 {0 0 0};
+    %vpi_call 2 10 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "strength.v";
