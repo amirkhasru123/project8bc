@@ -50,5 +50,45 @@ Singed
 	<<< //arithmetic left shift
 	Note: Other operators are just like C
 	
+####Concatenation & Replication
+	{} is used to concatenate and replicate.
 
+##Code Implementation
+	c={a,b} //a and b will be concatenated and stored in c. size of c must be the summation of the size of a and b.
+	2{a} //a will be replicated two times.
 	
+##Implementation
+	concatenation.v
+	replication.v
+
+####Always Block
+	Just like while in C. 
+
+##Implementation
+	always.v
+
+####Combo Logic With Always
+
+##Implementation
+	halfAdderAlways.v
+	fullAdderAlways.v
+	twoToOneMuxAlways.v
+	oneByFourDmuxAlways.v
+	fourBySixteenDecoAlways.v
+
+####Sequential Logic With Always
+
+##Implementation
+	jkFlipFlop.v
+	moduloTenCounter.v
+	fourBitLeftShift.v
+
+####Initial Block
+	A set of Verilog statements are usually executed sequentially in a simulation. These statements are placed inside a procedural block. There are mainly two types of procedural blocks in Verilog - initial and always
+
+	initial begin
+		//Code
+	end
+
+####Verilog Generate Block
+	//not yet understood as it's dependent on if, else, case etc
