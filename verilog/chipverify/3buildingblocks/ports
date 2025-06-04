@@ -1,0 +1,64 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5b70749fa670 .scope module, "tb" "tb" 2 9;
+ .timescale 0 0;
+v0x5b7074a0e0c0_0 .var/s "in_a", 7 0;
+v0x5b7074a0e1b0_0 .var/s "in_b", 7 0;
+v0x5b7074a0e280_0 .net/s "sum", 7 0, L_0x5b7074a0ebc0;  1 drivers
+S_0x5b70749fc130 .scope module, "dut" "signed_example" 2 13, 2 1 0, S_0x5b70749fa670;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "in_a";
+    .port_info 1 /INPUT 8 "in_b";
+    .port_info 2 /OUTPUT 8 "sum";
+v0x5b70749fc360_0 .net/s "in_a", 7 0, v0x5b7074a0e0c0_0;  1 drivers
+v0x5b7074a0dea0_0 .net/s "in_b", 7 0, v0x5b7074a0e1b0_0;  1 drivers
+v0x5b7074a0df80_0 .net/s "sum", 7 0, L_0x5b7074a0ebc0;  alias, 1 drivers
+L_0x5b7074a0ebc0 .arith/sum 8, v0x5b7074a0e0c0_0, v0x5b7074a0e1b0_0;
+S_0x5b70749fa800 .scope module, "tbone" "tbone" 2 22;
+ .timescale 0 0;
+v0x5b7074a0e900_0 .var/s "in_a", 7 0;
+v0x5b7074a0e9f0_0 .var/s "in_b", 7 0;
+v0x5b7074a0eac0_0 .net/s "sum", 7 0, L_0x5b7074a0ed50;  1 drivers
+S_0x5b7074a0e380 .scope module, "dut" "signed_example" 2 26, 2 1 0, S_0x5b70749fa800;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "in_a";
+    .port_info 1 /INPUT 8 "in_b";
+    .port_info 2 /OUTPUT 8 "sum";
+v0x5b7074a0e5b0_0 .net/s "in_a", 7 0, v0x5b7074a0e900_0;  1 drivers
+v0x5b7074a0e6b0_0 .net/s "in_b", 7 0, v0x5b7074a0e9f0_0;  1 drivers
+v0x5b7074a0e790_0 .net/s "sum", 7 0, L_0x5b7074a0ed50;  alias, 1 drivers
+L_0x5b7074a0ed50 .arith/sum 8, v0x5b7074a0e900_0, v0x5b7074a0e9f0_0;
+    .scope S_0x5b70749fa670;
+T_0 ;
+    %pushi/vec4 251, 0, 8;
+    %store/vec4 v0x5b7074a0e0c0_0, 0, 8;
+    %pushi/vec4 3, 0, 8;
+    %store/vec4 v0x5b7074a0e1b0_0, 0, 8;
+    %delay 1, 0;
+    %vpi_call 2 16 "$display", "Sum: %0d", v0x5b7074a0e280_0 {0 0 0};
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x5b70749fa800;
+T_1 ;
+    %pushi/vec4 251, 0, 8;
+    %store/vec4 v0x5b7074a0e900_0, 0, 8;
+    %pushi/vec4 3, 0, 8;
+    %store/vec4 v0x5b7074a0e9f0_0, 0, 8;
+    %delay 1, 0;
+    %vpi_call 2 29 "$display", "Sum: %0d", v0x5b7074a0eac0_0 {0 0 0};
+    %vpi_call 2 30 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "ports.v";

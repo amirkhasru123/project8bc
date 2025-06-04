@@ -7,61 +7,75 @@
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
-S_0x6522c2fbc1f0 .scope module, "combined" "combined" 2 9;
+S_0x6517f064a1f0 .scope module, "combined" "combined" 2 9;
  .timescale 0 0;
-L_0x6522c2fcfa70 .functor AND 1, L_0x6522c2fcf8d0, L_0x6522c2fcf990, C4<1>, C4<1>;
-v0x6522c2fcf4a0_0 .var "a", 0 0;
-v0x6522c2fcf590_0 .var "b", 0 0;
-v0x6522c2fcf6a0_0 .net "out", 0 0, L_0x6522c2fcfa70;  1 drivers
-v0x6522c2fcf740_0 .net "out1", 0 0, L_0x6522c2fcf8d0;  1 drivers
-v0x6522c2fcf7e0_0 .net "out2", 0 0, L_0x6522c2fcf990;  1 drivers
-S_0x6522c2fbc380 .scope module, "one" "andGate" 2 14, 2 1 0, S_0x6522c2fbc1f0;
- .timescale 0 0;
-    .port_info 0 /INPUT 1 "a";
-    .port_info 1 /INPUT 1 "b";
-    .port_info 2 /OUTPUT 1 "x";
-L_0x6522c2fcf8d0 .functor AND 1, v0x6522c2fcf4a0_0, v0x6522c2fcf590_0, C4<1>, C4<1>;
-v0x6522c2fbb280_0 .net "a", 0 0, v0x6522c2fcf4a0_0;  1 drivers
-v0x6522c2fcedc0_0 .net "b", 0 0, v0x6522c2fcf590_0;  1 drivers
-v0x6522c2fcee80_0 .net "x", 0 0, L_0x6522c2fcf8d0;  alias, 1 drivers
-S_0x6522c2fcefa0 .scope module, "two" "orGate" 2 16, 2 5 0, S_0x6522c2fbc1f0;
+L_0x6517f065f5e0 .functor AND 1, L_0x6517f065f3e0, L_0x6517f065f4e0, C4<1>, C4<1>;
+v0x6517f065ee70_0 .var "a", 0 0;
+v0x6517f065ef60_0 .var "b", 0 0;
+v0x6517f065f070_0 .net "out", 0 0, L_0x6517f065f5e0;  1 drivers
+v0x6517f065f110_0 .net "out1", 0 0, L_0x6517f065f3e0;  1 drivers
+v0x6517f065f1b0_0 .net "out2", 0 0, L_0x6517f065f4e0;  1 drivers
+S_0x6517f064d6a0 .scope module, "one" "andGate" 2 14, 2 1 0, S_0x6517f064a1f0;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "a";
     .port_info 1 /INPUT 1 "b";
     .port_info 2 /OUTPUT 1 "x";
-L_0x6522c2fcf990 .functor OR 1, v0x6522c2fcf4a0_0, v0x6522c2fcf590_0, C4<0>, C4<0>;
-v0x6522c2fcf1d0_0 .net "a", 0 0, v0x6522c2fcf4a0_0;  alias, 1 drivers
-v0x6522c2fcf2c0_0 .net "b", 0 0, v0x6522c2fcf590_0;  alias, 1 drivers
-v0x6522c2fcf390_0 .net "x", 0 0, L_0x6522c2fcf990;  alias, 1 drivers
-    .scope S_0x6522c2fbc1f0;
+L_0x6517f065f3e0 .functor AND 1, v0x6517f065ee70_0, v0x6517f065ef60_0, C4<1>, C4<1>;
+v0x6517f064d8d0_0 .net "a", 0 0, v0x6517f065ee70_0;  1 drivers
+v0x6517f065e790_0 .net "b", 0 0, v0x6517f065ef60_0;  1 drivers
+v0x6517f065e850_0 .net "x", 0 0, L_0x6517f065f3e0;  alias, 1 drivers
+S_0x6517f065e970 .scope module, "two" "orGate" 2 16, 2 5 0, S_0x6517f064a1f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "x";
+L_0x6517f065f4e0 .functor OR 1, v0x6517f065ee70_0, v0x6517f065ef60_0, C4<0>, C4<0>;
+v0x6517f065eba0_0 .net "a", 0 0, v0x6517f065ee70_0;  alias, 1 drivers
+v0x6517f065ec90_0 .net "b", 0 0, v0x6517f065ef60_0;  alias, 1 drivers
+v0x6517f065ed60_0 .net "x", 0 0, L_0x6517f065f4e0;  alias, 1 drivers
+S_0x6517f064a380 .scope module, "nestedmodule" "nestedmodule" 2 30;
+ .timescale 0 0;
+v0x6517f065f2a0_0 .var "a", 0 0;
+v0x6517f065f340_0 .var "b", 0 0;
+    .scope S_0x6517f064a1f0;
 T_0 ;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x6522c2fcf4a0_0, 0, 1;
+    %store/vec4 v0x6517f065ee70_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x6522c2fcf590_0, 0, 1;
+    %store/vec4 v0x6517f065ef60_0, 0, 1;
     %delay 2, 0;
-    %vpi_call 2 22 "$display", "%b", v0x6522c2fcf6a0_0 {0 0 0};
+    %vpi_call 2 22 "$display", "%b", v0x6517f065f070_0 {0 0 0};
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x6522c2fcf4a0_0, 0, 1;
+    %store/vec4 v0x6517f065ee70_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x6522c2fcf590_0, 0, 1;
+    %store/vec4 v0x6517f065ef60_0, 0, 1;
     %delay 2, 0;
-    %vpi_call 2 23 "$display", "%b", v0x6522c2fcf6a0_0 {0 0 0};
+    %vpi_call 2 23 "$display", "%b", v0x6517f065f070_0 {0 0 0};
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x6522c2fcf4a0_0, 0, 1;
+    %store/vec4 v0x6517f065ee70_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x6522c2fcf590_0, 0, 1;
+    %store/vec4 v0x6517f065ef60_0, 0, 1;
     %delay 2, 0;
-    %vpi_call 2 24 "$display", "%b", v0x6522c2fcf6a0_0 {0 0 0};
+    %vpi_call 2 24 "$display", "%b", v0x6517f065f070_0 {0 0 0};
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x6522c2fcf4a0_0, 0, 1;
+    %store/vec4 v0x6517f065ee70_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x6522c2fcf590_0, 0, 1;
+    %store/vec4 v0x6517f065ef60_0, 0, 1;
     %delay 2, 0;
-    %vpi_call 2 25 "$display", "%b", v0x6522c2fcf6a0_0 {0 0 0};
+    %vpi_call 2 25 "$display", "%b", v0x6517f065f070_0 {0 0 0};
     %vpi_call 2 26 "$finish" {0 0 0};
     %end;
     .thread T_0;
+    .scope S_0x6517f064a380;
+T_1 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6517f065f2a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6517f065f340_0, 0, 1;
+    %delay 3, 0;
+    %vpi_call 2 34 "$display", "%b", v0x6517f065e850_0 {0 0 0};
+    %end;
+    .thread T_1;
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";

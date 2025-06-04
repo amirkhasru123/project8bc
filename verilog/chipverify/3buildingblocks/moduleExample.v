@@ -27,5 +27,10 @@ module combined;
 	end 
 endmodule
 
-
-
+module nestedmodule;
+	reg a,b;
+	initial begin
+		a=1;b=1;#3
+		$display("%b",combined.one.x); //accessing variables from different modules
+	end 
+endmodule
