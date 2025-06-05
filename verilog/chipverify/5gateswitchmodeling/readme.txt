@@ -18,3 +18,22 @@
 	and.v
 	xor.v
 	buf.v
+
+####Switch Level Implementation
+	Need to learn more. Come back later.
+
+##Implementation
+	pnmos.v
+	cmos.v
+
+####UDP(User Defined Primitive)
+	Using truth table directly.
+
+##Code Implementation
+	primitive... endprimitive
+	Declare a primitive block.
+	table... endtable
+	Declare a truth table.
+
+##Implementation
+	udp.v
