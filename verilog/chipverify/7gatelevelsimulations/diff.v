@@ -1,10 +1,6 @@
 `timescale 1ns/1ps
 
-module dff (
-    input wire clk,
-    input wire d,
-    output reg q
-);
+module dff (input wire clk,input wire d,output reg q);
     always @(posedge clk) begin
         q <= d;
     end
@@ -23,11 +19,7 @@ module tb;
     reg d;
     wire q;
 
-    dff uut (
-        .clk(clk),
-        .d(d),
-        .q(q)
-    );
+    dff uut (.clk(clk),.d(d),.q(q));
 
     initial begin
         $dumpfile("dff.vcd");
@@ -54,4 +46,3 @@ module tb;
         #10 $finish;
     end
 endmodule
-

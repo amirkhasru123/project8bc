@@ -1,0 +1,30 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5fab4dd6a280 .scope module, "defineEx" "defineEx" 2 3;
+ .timescale 0 0;
+S_0x5fab4dd6a410 .scope module, "ifdef" "ifdef" 3 3;
+ .timescale 0 0;
+    .scope S_0x5fab4dd6a280;
+T_0 ;
+    %vpi_call 2 6 "$display", "I am amir" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x5fab4dd6a410;
+T_1 ;
+    %vpi_call 3 6 "$display", "I am amir" {0 0 0};
+    %vpi_call 3 9 "$display", "I am samir" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "./define.v";
+    "ifdef.v";
