@@ -11,14 +11,15 @@ module test;
     andgate instanceOne(.a(a), .b(b), .x(x));
 
     initial begin
-        $dumpfile("verybasic.vcd");
+        $dumpfile("andgatesimul.vcd");
         $dumpvars(0, test);
 
         $monitor("%b %b = %b", a, b, x);
-        a = 0; b = 1;
-        #5 a = 1;
-        #10 a = 0;
-        #15 a = 1;
+        a = 0; b = 0;
+		#5 a = 1; b = 1;
+		#10 a = 0; b=1;
+		#15 a = 1; b=0;
+		#20 a=1;b=1;
         $finish;
     end
 endmodule
