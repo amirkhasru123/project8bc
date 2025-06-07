@@ -1,3 +1,6 @@
+Verilog Handbook
+Author: K. M. Amir Khasru
+
 I was thinking. "I can't waste time anymore. I've to learn Verilog as Robiul sir advised me. Learning such tech will secure a good fortune for me. What am I waiting for then?" I opened a browser, and started to watch a tutorial. Few moments later Mr. Iblis appeared, and told, "Dude, cool down! You don't need to learn Verilog." "Why? Because you want me to follow the path of failure?", I shouted. "No, I want you to realize that you've already learnt C. Verilog is nothing but C.", Iblish replied. "What!", I thought. "After all learning C wansn't a devilish idea at all?" "Yea. Just keep partying.", Iblish left.
 
 ####What is Verilog?
@@ -41,16 +44,17 @@ I was thinking. "I can't waste time anymore. I've to learn Verilog as Robiul sir
 	ra_single_port.v
 
 ####ASIC Design Flow
-	VLSI stands for Very Large Scale Integration which is a tech used to create ICs. 
+	VLSI, Very Large Scale Integration, is used to create ICs. 
 
 ####Design Abstraction Layers
-	RTL Level: In this level we write each sub-block in a HDL.
-	Schematic Level: HDLs are converted to gate level schematics also involve tech libraries.
-	Transistor Level: Implementation of gates.
-	Physical Level: The final step is the layout transistors in silicon using EDA tools so that it can be fabricated. 
-Design Styles:
-	Top-Down: First define top-level blocks. Then break it into sub-levels. 
-	Bottom-up: First we identify building blocks. Then we use them to build the top-level. 
+	Architectural Level, top level abstraction layer, consists of sub-blocks and groups. 
+	RTL Level describes the sub-block in a HDL.
+	Schematic Level converts HDLs to gate level schematics also.
+	Transistor Level indicates the implementation of gates.
+	Physical Level lay transistors in silicon using EDA tools. 
+
+	Top-Down Design Style: Identify sub-blocks, and try to fabricate them from fundamental blocks. 
+	Bottom-up Design Style: Identify fundamental blocks first, and then use them to form what you want.
 
 Note: If you find this chapter boring, don't stop learning but just move forward.
 

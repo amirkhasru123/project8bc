@@ -1,4 +1,4 @@
-// If you are new at Verilog, most the the following code won't be understood by you. Just keep reading. You can come back here later.
+jj// If you are new at Verilog, most the the following code won't be understood by you. Just keep reading. You can come back here later.
 // After one months of hard work and spending 100+ hours, I finally got it. -Amir, 7th June, 2025.
 // 
 // A counter is a block of code. We've taken a module, and named it counter. Module counter has four ports of which three are inputs and the last one is output. 
