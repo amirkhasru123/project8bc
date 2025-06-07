@@ -7,12 +7,11 @@
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
-S_0x5ea6af870de0 .scope module, "comment" "comment" 2 1;
+S_0x5fca23f5b5a0 .scope module, "comment" "comment" 2 2;
  .timescale 0 0;
-    .scope S_0x5ea6af870de0;
+    .scope S_0x5fca23f5b5a0;
 T_0 ;
-    %vpi_call 2 3 "$display", "Boom" {0 0 0};
-    %vpi_call 2 4 "$finish" {0 0 0};
+    %vpi_call 2 5 "$display", "Boom" {0 0 0};
     %end;
     .thread T_0;
 # The file index is used to find the file name in the following table.

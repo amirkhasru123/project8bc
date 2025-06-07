@@ -20,12 +20,20 @@ I was thinking. "I can't waste time anymore. I've to learn Verilog as Robiul sir
 	Testbench module includes data that is sent to other modules.
 	 
 ##Code Implementation
+	Comments are made in two ways:
+	//single line comment
+	*/
+	comments
+	never gets 
+	executed
+	*/
+
 	Module definition is given as below: 
 	module module_name(port_lists) 
 		//port_lists can be empty
 	endmodule
 
-	Code execution happens here:
+	Data change happens here:
 	initial begin
 	end
 

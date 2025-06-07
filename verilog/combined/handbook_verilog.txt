@@ -1,0 +1,55 @@
+Most of the codes in Verilog must be inside of modules.
+	module module_name(port_lists);
+	endmodule
+
+Port_lists can be empty.
+	module module_name;
+	endmodule
+
+Comments can be written in two ways.
+	//single line comments  
+	/*multiple
+	lines
+	comments
+	*/
+
+Multiple line comments can't be nested.
+	/*
+		/*
+			Not possile
+		*/
+	*/
+
+Single line comments can't be double slashed multiple times.	//This is a comment.
+	////This is the same comment.
+	////////This is also the same comment.
+
+White spaces (spaces, tabs, newlines, formfeed) are ignored.All the following lines are same.
+	$display("amir");
+	  $display("amir");
+   		  $display("amir");
+
+		  $display("amir");
+
+Formfeed is slash f. It indicates printer output.
+	$display("\famir");
+
+We need to store contents in containers.
+	contents = data
+	containers = identifiers
+
+To show the data we must specify it's nature. For string we use %s.
+
+Containers and contents must have the same size.
+	reg [4*8:1] name = "amir";
+
+We store data to perform some operation on them.
+
+$display("text")
+	Displays texts with a return.
+
+$write("text")
+	Displays texts wtihout a return.
+
+$finish
+	finish the command

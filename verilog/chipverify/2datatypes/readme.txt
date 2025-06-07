@@ -1,31 +1,23 @@
 ####Comment
-	1. Single line comment indicated with //
-	2. Multiple line comment is indicated with /* */
-
-##Code Explanation
-	module = starts a module (function in C)
-		module moduleName
-	endmodule = ends a module(return in C)
-	$display() = displays a string (printf in C)
-	begin = begins a block?
-	end = ends a block
+	Single line comment indicated with //
+	Multiple line comment is indicated with /* */
 
 ##Implementation: comment.v
 
 ####Space
-	1.White spaces(spaces, tabs, newlines, formfeeds) are ignored.
+	White spaces (spaces, tabs, newlines, formfeeds) are ignored.
 
 ##Code Explanation
-	reg = data is given, a register(?).
-	[8*4:1] name = indicates name as a string which has 6 byte data.
-	[8*4:1] name = "amir " //a won't get displayed because name is declared as 4 byte string but we're forced it to hold 5 byte string.
-	%s = indicates we are displaying string
-	$finish = terminates the simulation cleanly
+	reg = identifiers which store data 
+	[8*4:1] name = 4-byte container.
+	[8*4:1] name = "amir " //sise of container = 4, but content size = 5. a won't get displayed.
+	%s = string 
+	$finish = terminates simulation
 
 ##Implementation: whiteSpaces.v
 
 ####Operators
-	1.Unary, Binary, Conditional operators are allowed.
+	Unary, Binary, Conditional operators are allowed.
 
 ##Code Explanation
 	~ = indicates not 
@@ -37,48 +29,57 @@
 ##Implementation: operators.v
 
 ####Number formats 
-	1.[size]'[base_format][number]
-	2.%b = binary, %d = decimal, %o = octal, %h = hexadecimal
+	[size]'[base_format][number]
+	%b = binary, %d = decimal, %o = octal, %h = hexadecimal
 
 ##Code Explanation
-	reg [2:0] a=3'b010 //declaring register a & initializing it
-	3'b010 = indicates that our number is 3 byte long, binary & its value is 010
-	3'd2 = indicates that our number is 3 byte long, decimal & its value is 002
-		So if there is not enough digit, 0 will be replaced.
-	9'h1FA = indicates that our number is 9 byte long, hexadecimal & its value is 1FA.
-	32'h1D40_CAFE = indicates that our number is 32 byte long, hexadecimal, & its value is 1D40CAFE. Here underscore is used to make code looks clear.
+	3'b010 = 3-bit binary number 010
+	3'd2 = 3-bit decimal number 002
+	9'h1FA = 9-bit hexadecimal number 1FA
+	32'h1D40_CAFE = 32-bit hexadecimal number 1D40_CAFE. 
 
 ##Implementation: numberFormats.v
 
 ####Default base and size
-	1.Numbers without a base format are decimals.
-	2.Numbers without a size matches size with given data. 
-	3.For negative numbers, we put a negative sign before size of the number.
+	Baseless numbers are decimals.
+	Sizeless numbers match size with given data.
+	For negative numbers, - sign is set before size.
 
 ##Code Explanation
-	integer a = 5421 //A will be a decimal as base format is not mentioned. Also the size of a is not mentioned, so the size is the size of 5421.
+	Following baseless a is decimal. It's size = size of 5421.
+	integer a = 5421 
 
 ##Implementation: unsizedNagative.v
 
 ####Identifiers:
-	1.Identifiers are names of variables. 
-	2.[a-z],[A-Z],[0-9],_,$ can be used to make variable names. 
-	3.Case sensitive. 
-	4.They can't start with a digit or a dollar sign. 
-Keywords:
-	1.Keywords are special identifiers reserved to define the language constructs.
-	2.They are in lower case. 
-	3.Some of them we learnt so far:always, and, assign, begin, else, end, endmodule, for, function, include, initial, input, integer, module, nand, nor, not, or, output, signed, time, real, realtime, reg, unsigned, wait, wire, while etc 
+	Identifiers in Verilog are like variables in C.
+	[a-z],[A-Z],[0-9],_,$ can be used to make variable names.
+	Identifiers are case sensitive. 
+	They can't start with a digit or a dollar sign. 
+
+	Keywords are special identifiers reserved to define the language constructs.
+	Keywords are expressed in lower case. 
+	For examples: always, and, assign, begin, else, end, endmodule, for, function, include, initial, input, integer, module, nand, nor, not, or, output, signed, time, real, realtime, reg, unsigned, wait, wire, while etc 
 
 ##Code Implementation
-	reg [2:0] $amir = 3'b010; // not possible, because identifier names can't start with a dollar sign
-	reg 1amir = 1; //not possible, because identifier can't start with a number.
-	reg amir; reg Amir; //2 different identifiers.
+	reg [2:0] $amir = 3'b010; //invalid
+	reg 1amir = 1; //invalid
+	//followoing two identifiers are different	
+	reg amir; 
+	reg Amir; 
 
 ##Implementation: identifiers.v
 
 ####Data types
-	1.Almost all data-types can only have one of the four different values: 0, 1, x, z. Here 0 means false, 1 means true, x or X means unknown, z means any unconnected wire. Other data typs are integer, time, real. %t=time or realtime. %f=floating point number = real number.    
+	Almost all data-types can have: 0, 1, x, z. 
+	0 = false
+	1 = true
+	x/X = unknown
+	z = unconnected wire.
+
+	Other data typs are integer, time, real. 
+	%t = time or realtime 
+	%f = real number.    
 Nets & Variables:
 	1. Nets are used to connect between hardware entities like logic gates and hence do not store any value on its own.
 	2. Wire is 1 type of nets.
