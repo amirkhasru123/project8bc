@@ -18,11 +18,8 @@
 
 ####Operators
 	Unary = left side operators
-	+, -, !, ~, &, |, ^, ~&, ~|, ~^, ^~
 	Binary = in between operators 
-	+, -, *, /, %, **, ==, !=, ===, !==, >, >=, <, <=, &&, ||, &, |, ^, ^~, ~^, <<, >>, <<<, >>>
 	Conditional = 3 parts operators
-	condition ? one : two;
 
 ##Code Explanation
 	~ = indicates not 
@@ -187,4 +184,3 @@ supply1, table, task, time, tran, tranif0, tranif1, tri, tri0, tri1, triand, tri
 
 ##Implementation
 	strength.v
-

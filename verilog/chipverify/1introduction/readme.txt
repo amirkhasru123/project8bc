@@ -1,22 +1,26 @@
-Verilog Handbook
-Author: K. M. Amir Khasru
+I was thinking. "I can't waste time anymore. I've to learn Verilog as Robiul sir advised me. Learning such tech will secure a good fortune for me. What am I waiting for then?" I opened a browser, and started to watch a tutorial. Few moments later, Mr. Iblis appeared, and told, "Dude, cool down! You don't need to learn Verilog." "Why? Because you want me to follow the path of failure?", I shouted. "No, I want you to realize that you've already learnt C. Verilog is nothing but C.", Iblish replied. "What!", I thought. "After all learning C wansn't a devilish idea at all?" "Yea. Just keep partying.", Iblish left.
 
-I was thinking. "I can't waste time anymore. I've to learn Verilog as Robiul sir advised me. Learning such tech will secure a good fortune for me. What am I waiting for then?" I opened a browser, and started to watch a tutorial. Few moments later Mr. Iblis appeared, and told, "Dude, cool down! You don't need to learn Verilog." "Why? Because you want me to follow the path of failure?", I shouted. "No, I want you to realize that you've already learnt C. Verilog is nothing but C.", Iblish replied. "What!", I thought. "After all learning C wansn't a devilish idea at all?" "Yea. Just keep partying.", Iblish left.
+Notes on Verilog from chipverify.com
+Author: K. M. Amir Khasru
 
 ####What is Verilog?
 	Verilog is an HDL.
 	HDL means hardware description language.
+
 	Verilog is developed by Gateway Design Automation in the mid-1980s. 
 	Later it was acquired by Cadence Design Systems.
+
 	Verilog is widely used for design and verification of ASICs and FPGAs. 
 	ASIC stands for application-specific integrated circuits.
 	FPGA means filed-programmable gate arrays.
+
 	Verilog is a carboncopy of C. 
 
 ####Introduction to verilog
 	Module defines hardware blocks or systems.
 	Module (unlike function) can have multiple outputs.
 	Module (unlike function) can contain delays, event controls.
+
 	Testbench module includes data that is sent to other modules.
 	 
 ##Code Implementation
@@ -47,7 +51,7 @@ I was thinking. "I can't waste time anymore. I've to learn Verilog as Robiul sir
 	module.v
 	hello_verilog.v
 
-	Not mandatory to understand:
+	Comeback after spending 100+ hours in Verilog:
 	counter.v
 	ra_single_port.v
 
@@ -56,6 +60,7 @@ I was thinking. "I can't waste time anymore. I've to learn Verilog as Robiul sir
 
 ####Design Abstraction Layers
 	Architectural Level, top level abstraction layer, consists of sub-blocks and groups. 
+
 	RTL Level describes the sub-block in a HDL.
 	Schematic Level converts HDLs to gate level schematics also.
 	Transistor Level indicates the implementation of gates.
@@ -69,4 +74,4 @@ Note: If you find this chapter boring, don't stop learning but just move forward
 Reference:
 chipverify.com
 
-Last Update: 7th June, 2025
+Last Update: 8th June, 2025
