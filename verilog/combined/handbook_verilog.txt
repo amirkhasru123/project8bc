@@ -66,17 +66,22 @@ We store data to perform some operation on them. We have three types of operatos
 
 Nets are here: 	
 	wire = multiple driver issue 
-	uwire = single driver 
+	uwire = single driver ensured 
 
-	supply0 = ground
-	supply1 = voltage reference to ground
-	wor = wired or
-	wand = wired and
-	tri [7:0] bus; //declaring 8-bit tri
-	trior = or with multiple driveris
-	triand = and, multiple drivers
-	tri0 = pulldown
-	tri1 = pullup
+	tri = multiple drivers, default = z, conflict = x 
+
+	wor = multiple drivers ored together
+	wand = multiple drivers anded together 
+
+	trior = tri, but conflict = ored together 
+	triand = tri, but conflict = anded together
+	tri0 = tri, default = 0 
+	tri1 = tri, default = 1 
+
+
+	supply0 = ground, constant
+	supply1 = voltage reference to ground, constant
+
 	trireg = not supported by iverilog
 
 Variable types: 
