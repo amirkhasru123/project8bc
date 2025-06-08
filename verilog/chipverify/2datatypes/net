@@ -7,49 +7,91 @@
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
-S_0x5da73a7ee490 .scope module, "net_types" "net_types" 2 1;
+S_0x64f9fc043490 .scope module, "net_types" "net_types" 2 1;
  .timescale 0 0;
-L_0x5da73a83c540 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
-v0x5da73a815aa0_0 .net8 "net_supply0", 0 0, L_0x5da73a83c540;  1 drivers, strength-aware
-L_0x5da73a83c5d0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
-v0x5da73a8156d0_0 .net8 "net_supply1", 0 0, L_0x5da73a83c5d0;  1 drivers, strength-aware
-L_0x706c05db70a8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
-L_0x706c05db70f0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
-RS_0x706c0608f078 .resolv tri, L_0x706c05db70a8, L_0x706c05db70f0;
-v0x5da73a83bfd0_0 .net8 "net_tri", 0 0, RS_0x706c0608f078;  2 drivers
-o0x706c0608f0a8 .functor BUFT 1, C8<550>, C4<0>, C4<0>, C4<0>; pull drive
-v0x5da73a83c070_0 .net8 "net_tri0", 0 0, o0x706c0608f0a8;  0 drivers, strength-aware
-o0x706c0608f0d8 .functor BUFT 1, C8<551>, C4<0>, C4<0>, C4<0>; pull drive
-v0x5da73a83c130_0 .net8 "net_tri1", 0 0, o0x706c0608f0d8;  0 drivers, strength-aware
-L_0x706c05db7258 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
-v0x5da73a83c240_0 .net "net_uwire", 0 0, L_0x706c05db7258;  1 drivers
-L_0x706c05db71c8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
-L_0x706c05db7210 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
-RS_0x706c0608f138 .resolv triand, L_0x706c05db71c8, L_0x706c05db7210;
-v0x5da73a83c300_0 .net8 "net_wand", 0 0, RS_0x706c0608f138;  2 drivers
-L_0x706c05db7018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
-L_0x706c05db7060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
-RS_0x706c0608f168 .resolv tri, L_0x706c05db7018, L_0x706c05db7060;
-v0x5da73a83c3c0_0 .net8 "net_wire", 0 0, RS_0x706c0608f168;  2 drivers
-L_0x706c05db7138 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
-L_0x706c05db7180 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
-RS_0x706c0608f198 .resolv trior, L_0x706c05db7138, L_0x706c05db7180;
-v0x5da73a83c480_0 .net8 "net_wor", 0 0, RS_0x706c0608f198;  2 drivers
-    .scope S_0x5da73a7ee490;
+o0x7c9eb8eb7018 .functor BUFZ 2, C4<zz>; HiZ drive
+; Elide local net with no drivers, v0x64f9fc06c280_0 name=_ivl_12
+o0x7c9eb8eb7048 .functor BUFZ 2, C4<zz>; HiZ drive
+; Elide local net with no drivers, v0x64f9fc06ad40_0 name=_ivl_16
+v0x64f9fc06a530_0 .var "dev1", 0 0;
+L_0x7c9eb8e6e0f0 .functor BUFT 1, C4<11>, C4<0>, C4<0>, C4<0>;
+v0x64f9fc06c9c0_0 .net "dev1_value", 1 0, L_0x7c9eb8e6e0f0;  1 drivers
+v0x64f9fc0974c0_0 .var "dev2", 0 0;
+L_0x7c9eb8e6e138 .functor BUFT 1, C4<10>, C4<0>, C4<0>, C4<0>;
+v0x64f9fc0975d0_0 .net "dev2_value", 1 0, L_0x7c9eb8e6e138;  1 drivers
+L_0x64f9fc097d90 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+v0x64f9fc0976b0_0 .net8 "net_supply0", 0 0, L_0x64f9fc097d90;  1 drivers, strength-aware
+L_0x64f9fc097e20 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+v0x64f9fc097770_0 .net8 "net_supply1", 0 0, L_0x64f9fc097e20;  1 drivers, strength-aware
+RS_0x7c9eb8eb7198 .resolv tri, L_0x64f9fc097f30, L_0x64f9fc098080;
+v0x64f9fc097830_0 .net8 "net_tri", 1 0, RS_0x7c9eb8eb7198;  2 drivers
+L_0x7c9eb8e6e2a0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+RS_0x7c9eb8eb71c8 .resolv tri0, L_0x7c9eb8e6e2a0;
+v0x64f9fc097910_0 .net8 "net_tri0", 0 0, RS_0x7c9eb8eb71c8;  1 drivers, strength-aware
+o0x7c9eb8eb71f8 .functor BUFT 1, C8<551>, C4<0>, C4<0>, C4<0>; pull drive
+v0x64f9fc0979d0_0 .net8 "net_tri1", 0 0, o0x7c9eb8eb71f8;  0 drivers, strength-aware
+L_0x7c9eb8e6e0a8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x64f9fc097a90_0 .net "net_uwire", 0 0, L_0x7c9eb8e6e0a8;  1 drivers
+L_0x7c9eb8e6e210 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_0x7c9eb8e6e258 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+RS_0x7c9eb8eb7258 .resolv triand, L_0x7c9eb8e6e210, L_0x7c9eb8e6e258;
+v0x64f9fc097b50_0 .net8 "net_wand", 0 0, RS_0x7c9eb8eb7258;  2 drivers
+L_0x7c9eb8e6e018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_0x7c9eb8e6e060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+RS_0x7c9eb8eb7288 .resolv tri, L_0x7c9eb8e6e018, L_0x7c9eb8e6e060;
+v0x64f9fc097c10_0 .net8 "net_wire", 0 0, RS_0x7c9eb8eb7288;  2 drivers
+L_0x7c9eb8e6e180 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0x7c9eb8e6e1c8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+RS_0x7c9eb8eb72b8 .resolv trior, L_0x7c9eb8e6e180, L_0x7c9eb8e6e1c8;
+v0x64f9fc097cd0_0 .net8 "net_wor", 0 0, RS_0x7c9eb8eb72b8;  2 drivers
+L_0x64f9fc097f30 .functor MUXZ 2, o0x7c9eb8eb7018, L_0x7c9eb8e6e0f0, v0x64f9fc06a530_0, C4<>;
+L_0x64f9fc098080 .functor MUXZ 2, o0x7c9eb8eb7048, L_0x7c9eb8e6e138, v0x64f9fc0974c0_0, C4<>;
+    .scope S_0x64f9fc043490;
 T_0 ;
-    %delay 5, 0;
-    %vpi_call 2 45 "$display", "net_wire     = %b", v0x5da73a83c3c0_0 {0 0 0};
-    %vpi_call 2 46 "$display", "net_tri      = %b", v0x5da73a83bfd0_0 {0 0 0};
-    %vpi_call 2 47 "$display", "net_wor      = %b", v0x5da73a83c480_0 {0 0 0};
-    %vpi_call 2 48 "$display", "net_wand     = %b", v0x5da73a83c300_0 {0 0 0};
-    %vpi_call 2 49 "$display", "net_tri0     = %b", v0x5da73a83c070_0 {0 0 0};
-    %vpi_call 2 50 "$display", "net_tri1     = %b", v0x5da73a83c130_0 {0 0 0};
-    %vpi_call 2 51 "$display", "net_supply0  = %b", v0x5da73a815aa0_0 {0 0 0};
-    %vpi_call 2 52 "$display", "net_supply1  = %b", v0x5da73a8156d0_0 {0 0 0};
-    %vpi_call 2 53 "$display", "net_uwire    = %b", v0x5da73a83c240_0 {0 0 0};
-    %vpi_call 2 54 "$finish" {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x64f9fc06a530_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x64f9fc0974c0_0, 0, 1;
     %end;
     .thread T_0;
+    .scope S_0x64f9fc043490;
+T_1 ;
+    %delay 5, 0;
+    %vpi_call 2 53 "$display", "net_wire     = %b", v0x64f9fc097c10_0 {0 0 0};
+    %vpi_call 2 54 "$display", "net_uwire    = %b", v0x64f9fc097a90_0 {0 0 0};
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x64f9fc06a530_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x64f9fc0974c0_0, 0, 1;
+    %vpi_call 2 57 "$display", "net_tri (dev1=1, dev2=0) = %b", v0x64f9fc097830_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x64f9fc06a530_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x64f9fc0974c0_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 61 "$display", "net_tri (dev1=0, dev2=1) = %b", v0x64f9fc097830_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x64f9fc06a530_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x64f9fc0974c0_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 65 "$display", "net_tri (dev1=1, dev2=1) = %b", v0x64f9fc097830_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x64f9fc06a530_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x64f9fc0974c0_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 69 "$display", "net_tri (dev1=0, dev2=0) = %b", v0x64f9fc097830_0 {0 0 0};
+    %vpi_call 2 71 "$display", "net_wor      = %b", v0x64f9fc097cd0_0 {0 0 0};
+    %vpi_call 2 72 "$display", "net_wand     = %b", v0x64f9fc097b50_0 {0 0 0};
+    %vpi_call 2 73 "$display", "net_tri0     = %b", v0x64f9fc097910_0 {0 0 0};
+    %vpi_call 2 74 "$display", "net_tri1     = %b", v0x64f9fc0979d0_0 {0 0 0};
+    %vpi_call 2 75 "$display", "net_supply0  = %b", v0x64f9fc0976b0_0 {0 0 0};
+    %vpi_call 2 76 "$display", "net_supply1  = %b", v0x64f9fc097770_0 {0 0 0};
+    %vpi_call 2 77 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
