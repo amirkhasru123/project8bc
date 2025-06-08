@@ -88,6 +88,25 @@ Variable types:
 	real
 	realtime
 
+Scalar & Vector:
+	1 bit net
+	Multiple bit net is vector
+
+	We can perform operation directly to a bit
+	[a:b] can be used to part select
+
+Verilog Array
+	An array declaration of a net or variable can be either scalar or vector.
+	Like multidimensional arry in C.
+	Arrays are allowed in Verilog for reg, wire, integer and real data types.
+
+Net strength
+	assign  (strength1, strength0) net = expression;
+	supply1, supply0, strong1, strong0, weak1, weak0, pull0, pull1, highz0, highz1
+	1 = true/up
+	0 = false/down
+
+
 Operators
 	Unary = left side operators
 	+, -, !, ~, &, |, ^, ~&, ~|, ~^, ^~
@@ -95,7 +114,6 @@ Operators
 	+, -, *, /, %, **, ==, !=, ===, !==, >, >=, <, <=, &&, ||, &, |, ^, ^~, ~^, <<, >>, <<<, >>>
 	Conditional = 3 parts operators
 	condition ? one : two;
-
 
 $display("text")
 	Displays texts with a return.

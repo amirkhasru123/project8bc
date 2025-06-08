@@ -68,6 +68,7 @@ supply1, table, task, time, tran, tranif0, tranif1, tri, tri0, tri1, triand, tri
 ##Code Implementation
 	reg [2:0] $amir = 3'b010; //invalid
 	reg 1amir = 1; //invalid
+
 	//followoing two identifiers are different	
 	reg amir; 
 	reg Amir; 

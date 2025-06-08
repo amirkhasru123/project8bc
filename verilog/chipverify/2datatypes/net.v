@@ -1,10 +1,17 @@
 module net_types;
 
-  //wire
-  wire net_wire;
-  assign net_wire = 1'b1;
+    //wire
+	wire net_wire;
+    assign net_wire = 1'b1; 
+    assign net_wire = 1'b0; //multiple driver possible, but we don't know which one will be held. So here unknown x will be shown as output.
 
-  //tri
+	//To solve the multiple driver issue, uwire was added to verilog. It's designed to show error message when multiple drivers happen.
+  ///uwire
+  	uwire net_uwire;
+  	assign net_uwire = 1'b1;
+  	//assign net_uwire = 1'b0; //Uncommenting this will show an irror.
+
+//tri
   tri net_tri;
   assign net_tri = 1'b0;
   assign net_tri = 1'b1;
@@ -33,14 +40,12 @@ module net_types;
   //supply1
   supply1 net_supply1;
 
-  //uwire
-  uwire net_uwire;
-  assign net_uwire = 1'b1;
-
+  
   //iverilog doesn't support trireg
 
   initial begin
     #5;
+
     $display("net_wire     = %b", net_wire);
     $display("net_tri      = %b", net_tri);
     $display("net_wor      = %b", net_wor);
