@@ -17,7 +17,12 @@
 ##Implementation: whiteSpaces.v
 
 ####Operators
-	Unary, Binary, Conditional operators are allowed.
+	Unary = left side operators
+	+, -, !, ~, &, |, ^, ~&, ~|, ~^, ^~
+	Binary = in between operators 
+	+, -, *, /, %, **, ==, !=, ===, !==, >, >=, <, <=, &&, ||, &, |, ^, ^~, ~^, <<, >>, <<<, >>>
+	Conditional = 3 parts operators
+	condition ? one : two;
 
 ##Code Explanation
 	~ = indicates not 
@@ -59,7 +64,9 @@
 
 	Keywords are special identifiers reserved to define the language constructs.
 	Keywords are expressed in lower case. 
-	For examples: always, and, assign, begin, else, end, endmodule, for, function, include, initial, input, integer, module, nand, nor, not, or, output, signed, time, real, realtime, reg, unsigned, wait, wire, while etc 
+	always, and, assign, automatic, begin, buf, bufif0, bufif1, case, casex, casez, cell, cmos, config, deassign, default, defparam, design, disable, edge, else, end, endcase, endconfig, endfunction, endgenerate, endmodule, endprimitive, endspecify, endtable, endtask, event, for, force, forever, fork, function, generate, genvar, if, ifnone, incdir, include, initial, inout, input, instance, integer, join, large, liblist, library, localparam, macromodule, medium, module, nand, negedge, nmos, nor, not, notif0, notif1, or, output, parameter, pmos, posedge, primitive, pull0, pull1, pulldown, pullup, pulsestyle_onevent, pulsestyle_ondetect, rcmos, real, realtime, reg,
+release, repeat, rnmos, rpmos, rtran, rtranif0, rtranif1, scalared, small, specify, specparam, strong0, strong1, supply0, 
+supply1, table, task, time, tran, tranif0, tranif1, tri, tri0, tri1, triand, trior, trireg, use, uwire, vectored, wait, wand, weak0, weak1, while, wire, wor, xnor, xor
 
 ##Code Implementation
 	reg [2:0] $amir = 3'b010; //invalid
@@ -80,17 +87,18 @@
 	Other data typs are integer, time, real. 
 	%t = time or realtime 
 	%f = real number.    
-Nets & Variables:
-	1. Nets are used to connect between hardware entities like logic gates and hence do not store any value on its own.
-	2. Wire is 1 type of nets.
-	3. Same nets and variables can't be declared multiple time.
-Wire vs reg
-	1. Wire doesn't not store value but reg does.
+
+	Nets are used to connect between hardware entities. 
+	They do not store any value on its own.
+	Wire is 1 type of nets.
+	Same nets and variables can't be declared multiple time.
+
+	Wire doesn't not store value but reg does.
 
 ##Code Explanation
 	wire a,b; //2 wires declared
 	wire andGate; //another wire declared
-	assign andGate = a&b; //assign is used to store operated data. Here andGate variwire will store value of a&b.
+	assign andGate = a&b; //assign is used to store data.
 	integer int_a; //declaring an integer
 	time time_c; //integer time
 	realtime realtime_d; //fractional time
@@ -99,10 +107,11 @@ Wire vs reg
 ##Implementation: variable.v 
 
 ####Verilog strings
-	1. One character is 8 byte long.
+	One character is 8 byte long (UNIX)
 
 ##Code Explanation
-	reg [8*4:1] str="amir" //so 8 byte space for each 4 characters are located.
+	reg [8*4:1] str="amir" //4-byte data
+
 	reg [8*4:1] str="amir" //can be declared directly  
 	reg	[8*4:1] dude;
 	dude = "boss"          //can be declared indirectly
@@ -110,10 +119,13 @@ Wire vs reg
 ##Implementation: string.v
 
 ####Scalar & Vector
-	1. 1 bit net or wire
-	2. Multiple bit net or wire is vector
-	3. We can perform operation directly to a bit
-	4. [a:b] can be used to part select
+	1 bit net or wire
+	By default any identifier is a scalar.
+
+	Multiple bit net or wire is vector
+
+	We can perform operation directly to a bit
+	[a:b] can be used to part select
 
 ##Code Explanation
 	reg [7:0] addr; //8-bit vector  
@@ -125,9 +137,9 @@ Wire vs reg
 ##scalarAndVector.v
 
 ####Verilog Array
-	1. An array declaration of a net or variable can be either scalar or vector.
-	2. Multidimensional arry
-	3. Arrays are allowed in Verilog for reg, wire, integer and real data types.
+	An array declaration of a net or variable can be either scalar or vector.
+	Like multidimensional arry in C.
+	Arrays are allowed in Verilog for reg, wire, integer and real data types.
 
 ##Code Implementation
 	reg        y1 [11:0]; //number of var = 12 each 1-bit
@@ -137,8 +149,8 @@ Wire vs reg
 ##Implementation: array.v
 
 ####Net Types
-	1. Net types are used to model physical connections between components in digital circuits.
-	2.  They do not store values, its value is determined by the values of its drivers and the default value of a net is typically 'z' (high impedance) when left unconnected.
+	Net types are used to model physical connections between components in digital circuits.
+	They do not store values, its value is determined by the values of its drivers and the default value of a net is typically 'z' (high impedance) when left unconnected.
 
 ##Code Implementation
 	wire = continuous assesment
@@ -156,6 +168,7 @@ Wire vs reg
 	uwire = single driver
 	supply0 = ground
 	supply1 = voltage
+
 ##Implementation
 	net.v
 
