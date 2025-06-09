@@ -7,17 +7,23 @@
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
-S_0x6103cd973540 .scope module, "strength_example" "strength_example" 2 1;
+S_0x5bef994f0510 .scope module, "strength_example" "strength_example" 2 1;
  .timescale 0 0;
-L_0x734859240018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
-L_0x734859240060 .functor BUFT 1, C8<331>, C4<0>, C4<0>, C4<0>;
-RS_0x734859289018 .resolv tri, L_0x734859240018, L_0x734859240060;
-v0x6103cd9736d0_0 .net8 "net_example", 0 0, RS_0x734859289018;  2 drivers, strength-aware
-    .scope S_0x6103cd973540;
+L_0x7470db63b0a8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0x7470db63b0f0 .functor BUFT 1, C8<331>, C4<0>, C4<0>, C4<0>;
+RS_0x7470db684018 .resolv tri, L_0x7470db63b0a8, L_0x7470db63b0f0;
+v0x5bef994f06a0_0 .net8 "net_example", 0 0, RS_0x7470db684018;  2 drivers, strength-aware
+L_0x7470db63b018 .functor BUFT 1, C8<330>, C4<0>, C4<0>, C4<0>;
+L_0x7470db63b060 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+RS_0x7470db684048 .resolv tri, L_0x7470db63b018, L_0x7470db63b060;
+v0x5bef99538650_0 .net8 "strongIsStrong", 0 0, RS_0x7470db684048;  2 drivers, strength-aware
+    .scope S_0x5bef994f0510;
 T_0 ;
     %delay 5, 0;
-    %vpi_call 2 9 "$display", "net_example = %b", v0x6103cd9736d0_0 {0 0 0};
-    %vpi_call 2 10 "$finish" {0 0 0};
+    %vpi_call 2 14 "$display", "net_example = %b", v0x5bef994f06a0_0 {0 0 0};
+    %delay 5, 0;
+    %vpi_call 2 16 "$display", "strongIsStrong = %b", v0x5bef99538650_0 {0 0 0};
+    %vpi_call 2 17 "$finish" {0 0 0};
     %end;
     .thread T_0;
 # The file index is used to find the file name in the following table.
