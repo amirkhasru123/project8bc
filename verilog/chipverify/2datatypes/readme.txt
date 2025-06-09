@@ -138,6 +138,7 @@ supply1, table, task, time, tran, tranif0, tranif1, tri, tri0, tri1, triand, tri
 	An array declaration of a net or variable can be either scalar or vector.
 	Like multidimensional arry in C.
 	Arrays are allowed in Verilog for reg, wire, integer and real data types.
+	type range array_name size_range 
 
 ##Code Implementation
 	reg        y1 [11:0]; //number of var = 12 each 1-bit

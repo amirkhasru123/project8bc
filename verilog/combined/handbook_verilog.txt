@@ -102,14 +102,14 @@ Verilog Array
 	An array declaration of a net or variable can be either scalar or vector.
 	Like multidimensional arry in C.
 	Arrays are allowed in Verilog for reg, wire, integer and real data types.
+	type range array_name size_range
 
-	Net strength
+Net strength
 	assign  (strength1, strength0) net = expression;
 	supply1, supply0, strong1, strong0, weak1, weak0, pull0, pull1, highz0, highz1
 	1 = true/up
 	0 = false/down
 	Power chart: supply, strong, pull, weak, highz
-
 
 Operators
 	Unary = left side operators
