@@ -19,6 +19,7 @@
 	inout [net_type] [range] list_of_names; 
 	output [net_type] [range] list_of_names;
 Singed
+
 	Ports can be signed or unsigned. By default ports are unsigned
 
 ##Code Implementation
@@ -28,9 +29,11 @@ Singed
 	ports.v
 
 ####Assign
-	Assign is implemented for wire-like elements where continuous assesment is necessary
-	assign <net_expression> = [drive_strength] [delay] <expression of different signals or constant value
-	Never assign with reg var. Usually reg is uded with always and initial.
+	Used for continous assesment.
+	assign <net_expression> = [drive_strength] [delay] <expression>
+	
+	Never assign with reg var. 
+	Usually reg is uded with always and initial.
 
 ##Code Implementation
 	

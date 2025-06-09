@@ -1,15 +1,19 @@
-Most of the codes in Verilog must be inside of modules.
+####################
+Most of the codes in Verilog remains inside of modules.
 	module module_name(port_lists);
 	endmodule
 
+####################
 Port_lists can be empty.
 	module module_name;
 	endmodule
 
+####################
 Every line is terminated with seicolon.
 	module module_name(port_lists); //a semicolon
 	endmodule
 
+####################
 Comment can be written in two ways.
 	//single line comments  
 	/*multiple
@@ -17,6 +21,7 @@ Comment can be written in two ways.
 	comments
 	*/
 
+####################
 Multiple line comments can't be nested.
 	/*
 		/*
@@ -24,10 +29,12 @@ Multiple line comments can't be nested.
 		*/
 	*/
 
+####################
 Single line comments can be double slashed multiple times.	//This is a comment.
 	////This is the same comment.
 	////////This is also the same comment.
 
+####################
 White spaces (spaces, tabs, newlines, formfeed) are ignored.All the following lines are same.
 	$display("amir");
 	  $display("amir");
@@ -35,32 +42,75 @@ White spaces (spaces, tabs, newlines, formfeed) are ignored.All the following li
 
 		  $display("amir");
 
+####################
 Formfeed is slash f. It indicates printer output.
 	$display("\famir");
 
-We need to store contents in containers. Like contents, like containers.
-	contents = data
-	containers = identifiers
+####################
+Containers contain contents. Like contents (data), like containers (identifiers).
 
-Containers and contents must have the same size.
+####################
+Containers and contents have the same size. Otherwise data overflow or underflow may happen.
 	reg [4*8:1] name = "amir"; //in UNIX, each character is of one byte. "amir" is content and name is container. Size of amir = size of name.
-	
 
-To show the contents we must specify it's nature. string -> %s, time -> %t, real -> %f. For integers, specification depends on base.
+####################
+To show the contents, we specify its nature. string = %s, time / realtime = %t, real = %f. 
 
-Number format: [size]'[base_format][number]. 
-	base_format
-		b = binary
-		d = decimal
-		o = octal
-		h = hexadecimal
+####################
+For integers, specification depends on base_format.
+	[size]'[base_format][number]. 
 	%b = binary, %d = decimal, %o = octal, %h = hexadecimal
 
-Negative number will have a - sign before size.
+####################
+For negative number add a '-' sign before size.
 
+####################
 Baseless numbers are decimals. Sizeless numbers match size from data.
 
-There are many keywords in verilog:	always, and, assign, automatic, begin, buf, bufif0, bufif1, case, casex, casez, cell, cmos, config, deassign, default, defparam, design, disable, edge, else, end, endcase, endconfig, endfunction, endgenerate, endmodule, endprimitive, endspecify, endtable, endtask, event, for, force, forever, fork, function, generate, genvar, if, ifnone, incdir, include, initial, inout, input, instance, integer, join, large, liblist, library, localparam, macromodule, medium, module, nand, negedge, nmos, nor, not, notif0, notif1, or, output, parameter, pmos, posedge, primitive, pull0, pull1, pulldown, pullup, pulsestyle_onevent, pulsestyle_ondetect, rcmos, real, realtime, reg, release, repeat, rnmos, rpmos, rtran, rtranif0, rtranif1, scalared, small, specify, specparam, strong0, strong1, supply0, supply1, table, task, time, tran, tranif0, tranif1, tri, tri0, tri1, triand, trior, trireg, use, uwire, vectored, wait, wand, weak0, weak1, while, wire, wor, xnor, xor
+####################
+Keywords are many types in Verilog.
+
+Like C's 
+case, default, else, for, if, while, include 
+
+Gates 
+and, or, not, xor, xnor, nand, nor
+
+Data Type
+integer, real, realtime, reg, time, tri, tri0, tri1, trior, triand, wor, wand, trireg, wire, uwire, trireg
+
+Strength
+supply0, supply1, strong0, strong1, pull0, pull1, pullup, pulldown, weak0, weak1
+
+Transistor / signals
+nmos, pmos, rcmos, rnmos, rpmos, cmos, edge, posedge, negedge 
+
+Verilog Only:
+function //like function in C
+inout //input or output
+input //input
+
+initial //start simulation
+always //like while in C
+
+begin //begin a block 
+end //end of a block
+
+assign //used for continuous assesment
+deassign //deasses an assesment
+
+automatic //recursive function
+
+buf //input = output 
+bufif0 //passed through when signal = 0 
+bufif1 //passed when signal = 1
+
+casex, casez, cell, config,
+defparam, design, disable, 
+end of blocks
+endcase, endconfig, endfunction, endgenerate, endmodule, endprimitive, endspecify, endtable, endtask
+event, force, forever, fork, generate, genvar, ifnone, incdir,instance 
+join, large, liblist, library, localparam, macromodule, medium, module, notif0, notif1, output, parameter, primitive, pulsestyle_onevent, pulsestyle_ondetect, release, repeat, rtran, rtranif0, rtranif1, scalared, small, specify, specparam, table, task, tran, tranif0, tranif1, use, vectored, wait  
 
 We store data to perform some operation on them. We have three types of operatos.
 
@@ -118,6 +168,14 @@ Operators
 	+, -, *, /, %, **, ==, !=, ===, !==, >, >=, <, <=, &&, ||, &, |, ^, ^~, ~^, <<, >>, <<<, >>>
 	Conditional = 3 parts operators
 	condition ? one : two;
+
+While simulating we need to pass variable value from module to module. target_module instance_name(.var_target(.var_current))
+
+Module ports can be of three types. input, output, inout
+
+By default, the ports are unsigned. For signed ports use signed keyword.
+
+{} is uded to concatenate and replicate.
 
 $display("text")
 	Displays texts with a return.
