@@ -1,14 +1,14 @@
 ####Module
-	Module in verilog is just like function in C.
+	Module in verilog is like function in C.
 	module <name> ([port_list]);
 		//port_list can be empty
 	endmodule
 
 ##Code Implementation
 	orGate one(.a(a),.b(b),.x(out1)) 
-	Here one is an instance/copy of module orGate.
+	One is an instance / copy of module orGate.
 	combined.one.x
-	It means we are accessing x from instance one of comibined module
+	accessing x from module one which is called inside module combined.	
 
 ##Implementation
 	moduleExample.v
@@ -18,22 +18,21 @@
 	input [net_type] [range] list_of_names;
 	inout [net_type] [range] list_of_names; 
 	output [net_type] [range] list_of_names;
-Singed
 
-	Ports can be signed or unsigned. By default ports are unsigned
+	By default ports are unsigned
 
 ##Code Implementation
-	signed = indicates a number either signed or unsigned
+	signed = indicates a signed port 
 
 ##Implementation
 	ports.v
 
 ####Assign
-	Used for continous assesment.
+	Used for continous assesment
 	assign <net_expression> = [drive_strength] [delay] <expression>
 	
-	Never assign with reg var. 
-	Usually reg is uded with always and initial.
+	assign reg name = expression; //invalid	
+	Usually reg is used with always and initial.
 
 ##Code Implementation
 	
@@ -51,7 +50,7 @@ Singed
 	<< //logical left shift
 	>>> //arithmetic right shift
 	<<< //arithmetic left shift
-	Note: Other operators are just like C
+	Note: Other operators are like C
 	
 ####Concatenation & Replication
 	{} is used to concatenate and replicate.
@@ -65,7 +64,7 @@ Singed
 	replication.v
 
 ####Always Block
-	Just like while in C. 
+	Like while in C. 
 
 ##Implementation
 	always.v
@@ -87,7 +86,7 @@ Singed
 	fourBitLeftShift.v
 
 ####Initial Block
-	A set of Verilog statements are usually executed sequentially in a simulation. These statements are placed inside a procedural block. There are mainly two types of procedural blocks in Verilog - initial and always
+	A set of Verilog statements are usually executed sequentially. These statements are placed mainly inside of either initial or always
 
 	initial begin
 		//Code

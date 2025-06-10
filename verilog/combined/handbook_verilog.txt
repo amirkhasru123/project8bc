@@ -35,7 +35,7 @@ Single line comments can be double slashed multiple times.	//This is a comment.
 	////////This is also the same comment.
 
 ####################
-White spaces (spaces, tabs, newlines, formfeed) are ignored.All the following lines are same.
+White spaces (spaces, tabs, newlines, formfeed) are ignored. All the following lines are same.
 	$display("amir");
 	  $display("amir");
    		  $display("amir");
@@ -68,16 +68,16 @@ For negative number add a '-' sign before size.
 Baseless numbers are decimals. Sizeless numbers match size from data.
 
 ####################
-Keywords are many types in Verilog.
+Keywords are of many types in Verilog.
 
-Like C's 
-case, default, else, for, if, while, include 
+C-like
+if, else, for, while, case, default, include 
 
-Gates 
-and, or, not, xor, xnor, nand, nor
+Gates
+or, and, not, nor, nand, xor, xnor
 
-Data Type
-integer, real, realtime, reg, time, tri, tri0, tri1, trior, triand, wor, wand, trireg, wire, uwire, trireg
+Net / Data Type
+integer, real, time, realtime, wire, uwire, tri, tri0, tri1, trior, triand, wor, wand, trireg, reg
 
 Strength
 supply0, supply1, strong0, strong1, pull0, pull1, pullup, pulldown, weak0, weak1
@@ -86,15 +86,17 @@ Transistor / signals
 nmos, pmos, rcmos, rnmos, rpmos, cmos, edge, posedge, negedge 
 
 Verilog Only:
-function //like function in C
-inout //input or output
-input //input
+function //function in C
+inout //input or output port
+input //input port
+output //output pot
 
 initial //start simulation
-always //like while in C
+always //while in C
 
-begin //begin a block 
+begin //beginning of a block 
 end //end of a block
+endcase, endconfig, endfunction, endgenerate, endmodule, endprimitive, endspecify, endtable, endtask
 
 assign //used for continuous assesment
 deassign //deasses an assesment
@@ -105,16 +107,13 @@ buf //input = output
 bufif0 //passed through when signal = 0 
 bufif1 //passed when signal = 1
 
+//not still known
 casex, casez, cell, config,
 defparam, design, disable, 
-end of blocks
-endcase, endconfig, endfunction, endgenerate, endmodule, endprimitive, endspecify, endtable, endtask
-event, force, forever, fork, generate, genvar, ifnone, incdir,instance 
-join, large, liblist, library, localparam, macromodule, medium, module, notif0, notif1, output, parameter, primitive, pulsestyle_onevent, pulsestyle_ondetect, release, repeat, rtran, rtranif0, rtranif1, scalared, small, specify, specparam, table, task, tran, tranif0, tranif1, use, vectored, wait  
+event, force, forever, fork, generate, genvar, ifnone, incdir,instance, join, large, liblist, library, localparam, macromodule, medium, module, notif0, notif1, output, parameter, primitive, pulsestyle_onevent, pulsestyle_ondetect, release, repeat, rtran, rtranif0, rtranif1, scalared, small, specify, specparam, table, task, tran, tranif0, tranif1, use, vectored, wait  
 
-We store data to perform some operation on them. We have three types of operatos.
-
-Nets are here: 	
+####################
+Many types of Nets: 	
 	wire = multiple driver issue 
 	uwire = single driver ensured 
 
@@ -128,19 +127,20 @@ Nets are here:
 	tri0 = tri, default = 0 
 	tri1 = tri, default = 1 
 
-
 	supply0 = ground, constant
 	supply1 = voltage reference to ground, constant
 
 	trireg = not supported by iverilog
 
-Variable types: 
+##################
+Many types of variables: 
 	reg
 	integer
 	time 
 	real
 	realtime
 
+#####################
 Scalar & Vector:
 	1 bit net
 	Multiple bit net is vector
