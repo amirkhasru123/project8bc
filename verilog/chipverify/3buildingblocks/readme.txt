@@ -7,8 +7,11 @@
 ##Code Implementation
 	orGate one(.a(a),.b(b),.x(out1)) 
 	One is an instance / copy of module orGate.
+
 	combined.one.x
 	accessing x from module one which is called inside module combined.	
+
+	.y() indicates unconnected ports.
 
 ##Implementation
 	moduleExample.v
@@ -69,7 +72,7 @@
 ##Implementation
 	always.v
 
-####Combo Logic With Always
+####Combinational Logic With Always
 
 ##Implementation
 	halfAdderAlways.v
@@ -93,4 +96,10 @@
 	end
 
 ####Verilog Generate Block
-	//not yet understood as it's dependent on if, else, case etc
+	Generate block is used to generate more complex circuit that resonates simplier one.
+
+##Implementation
+	generate.v
+	generateDoneByme.v
+
+Update: 10th Jun, 2025
