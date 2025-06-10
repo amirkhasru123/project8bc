@@ -1,25 +1,15 @@
-module halfAdderAlways (
-    input wire a,
-    input wire b,
-    output reg sum,
-    output reg carry
-);
+module halfAdderAlways(input wire a, input wire b, output reg sum, output reg carry);
     always @(*) begin
-        sum = a ^ b;  
-        carry = a & b;
+        sum = a^b;  
+        carry = a&b;
     end
 endmodule
 
 module testbench;
-    reg a, b;
-    wire sum, carry;
+    reg a,b;
+    wire sum,carry;
 
-    halfAdderAlways dut (
-        .a(a),
-        .b(b),
-        .sum(sum),
-        .carry(carry)
-    );
+    halfAdderAlways dut(.a(a),.b(b),.sum(sum),.carry(carry));
 
     initial begin
         a = 0; b = 0; #10;

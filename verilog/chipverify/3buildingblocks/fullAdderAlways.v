@@ -1,10 +1,7 @@
-module fa (	input 	a, b, cin,
-			output reg	sum, cout);
-
+module fa(input	a,b,cin, output reg	sum, cout);
   always @ (a or b or cin) begin
     {cout, sum} = a + b + cin;
   end
-
 endmodule
 
 module tb;
@@ -12,16 +9,15 @@ module tb;
   wire sum, cout;
   integer i;
 
-  fa u0 ( .a(a), .b(b), .cin(cin), .sum(sum), .cout(cout));
+  fa u0(.a(a),.b(b),.cin(cin),.sum(sum),.cout(cout));
 
   initial begin
     a <= 0;
     b <= 0;
 
-    $monitor("a=%0b b=%0b cin=%0b cout=%0b sum=%0b", a, b, cin, cout, sum);
-
-    for (i = 0; i < 8; i = i + 1) begin
-      {a, b, cin} = i;
+    $monitor("a=%0b b=%0b cin=%0b cout=%0b sum=%0b",a,b,cin,cout,sum);
+    for(i=0;i<8;i=i+1) begin
+      {a,b,cin}=i;
       #10;
     end
   end

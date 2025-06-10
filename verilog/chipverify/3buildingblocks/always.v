@@ -1,18 +1,13 @@
-`timescale 1ns / 1ps //??
+`timescale 1ns / 1ps
 
-module counter4bit (
-    input wire clk,    
-    input wire reset, 
-    output reg [3:0] count 
-);
+module counter4bit(input wire clk, input wire reset, output reg [3:0] count);
 
 always @(posedge clk or posedge reset) begin
-    if (reset)
-        count <= 4'b0000;
+    if(reset)
+        count<=4'b0000;
     else
-        count <= count + 1; 
+        count<=count+1; 
 end
-
 endmodule
 
 module counter4bit_tb;
@@ -20,11 +15,7 @@ reg clk;
 reg reset;
 wire [3:0] count;
 
-counter4bit uut (
-    .clk(clk),
-    .reset(reset),
-    .count(count)
-);
+counter4bit uut(.clk(clk),.reset(reset),.count(count));
 
 always begin
     #5 clk = ~clk;
