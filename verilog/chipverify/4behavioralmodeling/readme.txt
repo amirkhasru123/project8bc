@@ -1,42 +1,48 @@
 ####Verilog Block Statements
-	Blocks of code works together.
-	Two types.
-	1.Sequential:
+	Block of code works together.
+
+	Two types
+	Sequential
 		A block of code executes sequentially.
 		Starts with 'begin' and end with 'end'.
-	Parallel:
+	Parallel
 		A parallel block can execute statements concurrently.
-		Must be embeded between 'fork' and 'join'
+		Must be embeded between 'fork' and 'join'.
 
-Note: Programming language 'Go' does have concurrency imbeded in its core. Two concepts related???
+Note: 'Go' has concurrency feature. Two concepts related?
 
 ##Implementation
 	forkJoin.v
 
 ####Verilog Assignment
-	Three types.
-	1. Continuous
-		assign can be used.
-	2. Procedural:
+	There are three types of assignment.
+
+	Continuous
+		assign
+	Procedural
 		always, initial, task, functions
-	3. Continuous procedural
+	Continuous procedural
 		Assignment doen't have a duration. Hold value until next assignment.
-		assign, deassign //for reg only 
-		force, release.//for net and reg
+		assign, deassign. //for reg only 
+		force, release. //for net and reg
 
 ####Verilog Blocking and Nonblocking
-	1. = is used to block.
-	2. <= is used to not block.
+	 = is used to block.
+	 <= is used to not block.
 
 ####Verilog Control Block
 	if-else-if
 	Just like C. 
+
 	forever
 	Infinite loop.
+
 	repeat
 	Repeat blocks n times.
+
 	while
 	Like C.
+
 	for
 	Like C.
 
@@ -51,6 +57,7 @@ Note: Programming language 'Go' does have concurrency imbeded in its core. Two c
 	Just like C... Yahoo......
 
 ####Verilo Case Statement
+	Just like C. Yahoo......
 
 ##Implementation
 	case.v

@@ -1,3 +1,7 @@
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Code Convention
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
 ####################
 Most of the codes in Verilog remains inside of modules.
 	module module_name(port_lists);
@@ -7,6 +11,16 @@ Most of the codes in Verilog remains inside of modules.
 Port_lists can be empty.
 	module module_name;
 	endmodule
+
+#####################
+Module ports can be of three types: input, output, inout
+
+#####################
+Passing data from module to module is possible.
+	target_module instance_name(.port_target(.port_current)
+
+#####################
+By default are unsigned. For signed ports use signed keyword.
 
 ####################
 Every line is terminated with seicolon.
@@ -46,6 +60,10 @@ White spaces (spaces, tabs, newlines, formfeed) are ignored. All the following l
 Formfeed is slash f. It indicates printer output.
 	$display("\famir");
 
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Different Data
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
 ####################
 Containers contain contents. Like contents (data), like containers (identifiers).
 
@@ -67,23 +85,123 @@ For negative number add a '-' sign before size.
 ####################
 Baseless numbers are decimals. Sizeless numbers match size from data.
 
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Modifiers
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+####################
+Many types of Nets
+	wire = multiple driver issue 
+	uwire = single driver ensured 
+
+	tri = multiple drivers, default = z, conflict = x 
+
+	wor = multiple drivers ored together
+	wand = multiple drivers anded together 
+
+	trior = tri, but conflict = ored together 
+	triand = tri, but conflict = anded together
+	tri0 = tri, default = 0 
+	tri1 = tri, default = 1 
+
+	supply0 = ground, constant
+	supply1 = voltage reference to ground, constant
+
+	trireg = not supported by iverilog
+
+##################
+Many types of variables
+	reg
+	integer
+	time 
+	real
+	realtime
+
+#####################
+Net strength
+	assign (strength1,strength0) net = expression;
+	supply1, supply0, strong1, strong0, weak1, weak0, pull0, pull1, highz0, highz1
+	1 = true/up
+	0 = false/down
+	Power table: supply, strong, pull, weak, highz
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Array
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+#####################
+Scalar & Vector
+	1 bit container is net
+	Multiple bit net is vector
+
+	We can perform operation directly to a bit
+	[a:b] can be used to part select
+
+#####################
+Verilog Array
+	An array declaration of a net or variable can be either scalar or vector.
+	Like multidimensional arry in C.
+	type range array_name size_range
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Operators
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+#####################
+Operators
+	Unary = left side operators
+	+, -, !, ~, &, |, ^, ~&, ~|, ~^, ^~
+	Binary = in between operators 
+	+, -, *, /, %, **, ==, !=, ===, !==, >, >=, <, <=, &&, ||, &, |, ^, ^~, ~^, <<, >>, <<<, >>>
+	Conditional = 3 parts operators
+	condition ? one : two;
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Now verilog has a lot of process going on. we have to control the processes
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+#####################
+{} is uded to concatenate and replicate.
+
+#####################
+We can fork(pause) and join(resume) process in verilog.
+	fork
+		//code
+	join
+
+#####################
+You can also block and not block code.
+	= block code
+	<= not block code
+
+#####################
+Special Functions
+	$display("text")
+	Displays texts with a return.
+
+	$write("text")
+	Displays texts wtihout a return.
+
+	$finish
+	Finish the command
+
 ####################
 Keywords are of many types in Verilog.
 
 C-like
-if, else, for, while, case, default, include 
+	if, else, for, while, case, default, include 
 
 Gates
-or, and, not, nor, nand, xor, xnor
+	or, and, not, nor, nand, xor, xnor
 
 Net / Data Type
-integer, real, time, realtime, wire, uwire, tri, tri0, tri1, trior, triand, wor, wand, trireg, reg
+	integer, real, time, realtime, wire, uwire, tri, tri0, tri1, trior, triand, wor, wand, trireg, reg
 
 Strength
-supply0, supply1, strong0, strong1, pull0, pull1, pullup, pulldown, weak0, weak1
+	supply0, supply1, strong0, strong1, pull0, pull1, pullup, pulldown, weak0, weak1
 
 Transistor / signals
-nmos, pmos, rcmos, rnmos, rpmos, cmos, edge, posedge, negedge 
+	nmos, pmos, rcmos, rnmos, rpmos, cmos, edge, posedge, negedge 
 
 Verilog Only:
 function //function in C
@@ -110,78 +228,4 @@ bufif1 //passed when signal = 1
 //not still known
 casex, casez, cell, config,
 defparam, design, disable, 
-event, force, forever, fork, generate, genvar, ifnone, incdir,instance, join, large, liblist, library, localparam, macromodule, medium, module, notif0, notif1, output, parameter, primitive, pulsestyle_onevent, pulsestyle_ondetect, release, repeat, rtran, rtranif0, rtranif1, scalared, small, specify, specparam, table, task, tran, tranif0, tranif1, use, vectored, wait  
-
-####################
-Many types of Nets: 	
-	wire = multiple driver issue 
-	uwire = single driver ensured 
-
-	tri = multiple drivers, default = z, conflict = x 
-
-	wor = multiple drivers ored together
-	wand = multiple drivers anded together 
-
-	trior = tri, but conflict = ored together 
-	triand = tri, but conflict = anded together
-	tri0 = tri, default = 0 
-	tri1 = tri, default = 1 
-
-	supply0 = ground, constant
-	supply1 = voltage reference to ground, constant
-
-	trireg = not supported by iverilog
-
-##################
-Many types of variables: 
-	reg
-	integer
-	time 
-	real
-	realtime
-
-#####################
-Scalar & Vector:
-	1 bit net
-	Multiple bit net is vector
-
-	We can perform operation directly to a bit
-	[a:b] can be used to part select
-
-Verilog Array
-	An array declaration of a net or variable can be either scalar or vector.
-	Like multidimensional arry in C.
-	Arrays are allowed in Verilog for reg, wire, integer and real data types.
-	type range array_name size_range
-
-Net strength
-	assign  (strength1, strength0) net = expression;
-	supply1, supply0, strong1, strong0, weak1, weak0, pull0, pull1, highz0, highz1
-	1 = true/up
-	0 = false/down
-	Power chart: supply, strong, pull, weak, highz
-
-Operators
-	Unary = left side operators
-	+, -, !, ~, &, |, ^, ~&, ~|, ~^, ^~
-	Binary = in between operators 
-	+, -, *, /, %, **, ==, !=, ===, !==, >, >=, <, <=, &&, ||, &, |, ^, ^~, ~^, <<, >>, <<<, >>>
-	Conditional = 3 parts operators
-	condition ? one : two;
-
-While simulating we need to pass variable value from module to module. target_module instance_name(.var_target(.var_current))
-
-Module ports can be of three types. input, output, inout
-
-By default, the ports are unsigned. For signed ports use signed keyword.
-
-{} is uded to concatenate and replicate.
-
-$display("text")
-	Displays texts with a return.
-
-$write("text")
-	Displays texts wtihout a return.
-
-$finish
-	finish the command
+event, force, forever, fork, generate, genvar, ifnone, incdir,instance, join, large, liblist, library, localparam, macromodule, medium, module, notif0, notif1, output, parameter, primitive, pulsestyle_onevent, pulsestyle_ondetect, release, repeat, rtran, rtranif0, rtranif1, scalared, small, specify, specparam, table, task, tran, tranif0, tranif1, use, vectored, wait 

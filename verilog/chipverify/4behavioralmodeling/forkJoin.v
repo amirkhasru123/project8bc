@@ -1,12 +1,13 @@
-module fuck;
+module forkJoin;
 	reg [7:0] data;
+
 initial begin
 	#10   data = 8'hfe;
-	$display("%h",data);
+	$display("Before forking %h",data);
 	fork
 	   #20 data = 8'h11;
 	   #10 data = 8'h00;
 	join
-	$display("%h",data);
+	$display("After forking and joining %h",data);
 end
 endmodule
