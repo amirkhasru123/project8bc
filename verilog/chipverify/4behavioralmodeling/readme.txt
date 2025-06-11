@@ -99,26 +99,23 @@ Concurrent blocks assign, generate and module instance don't need always or init
 	Like constants in C.
 	parameter name = value;
 
+	3 types of parameters.
+	Module
+		Can be modified in function instance.
+	Local
+		Can't be modified in function instance.
+		But can express it with other var, then the var can change.
+	Specify
+		specify
+			//code
+		endspecify
+
 ##Implements
 	parameters.v
+	specify.v
 
 ####Verilog Delay Control
 
-##Code Implementation
-	`timescale 1ns/1ps
-	//Time scale precision
-    #10;
-	//Wait for 10 unit of time
-	#(a)
-	wait a unit of time
-	$realtime
-	shows realtime
-	nogedge
-	Negative edge of clk
-	posedge
-	Positive endge of clk
-	wait
-	will wait some unit of time
 ##Implementation
 	delaycontrol.v
 	eventcontrol.v

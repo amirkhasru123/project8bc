@@ -22,4 +22,3 @@ module tb;
       $display ("T=%0t [initial] b_event3 is triggered", $time);
   end
 endmodule
-
