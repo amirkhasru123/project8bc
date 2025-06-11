@@ -1,6 +1,7 @@
 module foreverEx;
 	initial begin
-		forever
+		forever begin
 			$display("I am done");
+		end
 	end
 endmodule

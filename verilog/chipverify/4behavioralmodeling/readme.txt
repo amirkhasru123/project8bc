@@ -9,7 +9,7 @@
 		A parallel block can execute statements concurrently.
 		Must be embeded between 'fork' and 'join'.
 
-Note: 'Go' has concurrency feature. Two concepts related?
+Note:'Go' has concurrency feature. Two concepts related?
 
 ##Implementation
 	forkJoin.v
@@ -26,6 +26,7 @@ Note: 'Go' has concurrency feature. Two concepts related?
 
 		assign, deassign. //for reg only 
 		force, release. //for net and reg
+
 ##Implementation
 	assignForce.v
 
@@ -33,9 +34,15 @@ Note: 'Go' has concurrency feature. Two concepts related?
 	 = is used to block.
 	 <= is used to not block.
 
+##Implementation
+	block.v
+
 ####Verilog Control Block
 	if-else-if
 	Just like C. 
+	
+	for
+	Like C.
 
 	forever
 	Infinite loop.
@@ -46,8 +53,11 @@ Note: 'Go' has concurrency feature. Two concepts related?
 	while
 	Like C.
 
-	for
+	case
 	Like C.
+
+Note: Procedural blocks must be inside always or initial.
+Concurrent blocks assign, generate and module instance don't need always or initial.
 
 ##Implementation
 	ifelse.v
@@ -55,32 +65,31 @@ Note: 'Go' has concurrency feature. Two concepts related?
 	repeat.v
 	while.v
 	for.v
-
-####Verilog For Loop
-	Just like C... Yahoo......
-
-####Verilo Case Statement
-	Just like C. Yahoo......
-
-##Implementation
 	case.v
 
 ####Verilog Conditional Statement
 	<variable> = <condition> ? <expression_1> : <expression_2>;
-	if-else
-	case
 	
-####Verilog if-else-if
-	Just like C.
-
 ####Functions
-	Just like C.
+	Like C.
+
+	Constraints:
+	A function cannot contain any time-controlled statements like #, @, wait, posedge, negedge
+	A function cannot start a task because it may consume simulation time, but can call other functions
+	A function should have atleast one input
+	A function cannot have non-blocking assignments or force-release or assign-deassign
+	A function cannot have any triggers
+	A function cannot have an output or inout
 
 ##Implementation
-	function.c
+	function.v
 
 ####Verilo Tasks
-	Not understood properly.
+	What functions can't do, tasks can.
+	Task is general version of function.
+
+##Implementation
+	task.v
 
 ####Verilog Parameters
 	Like constants.
