@@ -39,7 +39,7 @@ Comment can be written in two ways.
 Multiple line comments can't be nested.
 	/*
 		/*
-			Not possile
+			Not possible
 		*/
 	*/
 
@@ -156,12 +156,12 @@ Operators
 	Conditional = 3 parts operators
 	condition ? one : two;
 
+#####################
+{} is uded to concatenate and replicate.
+
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 Now verilog has a lot of process going on. we have to control the processes
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
-#####################
-{} is uded to concatenate and replicate.
 
 #####################
 We can fork(pause) and join(resume) process in verilog.
@@ -173,6 +173,10 @@ We can fork(pause) and join(resume) process in verilog.
 You can also block and not block code.
 	= block code
 	<= not block code
+
+#####################
+assign, deassign will assign and deassign a var for reg.
+force, release will do same for net and reg.
 
 #####################
 Special Functions

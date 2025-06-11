@@ -23,8 +23,11 @@ Note: 'Go' has concurrency feature. Two concepts related?
 		always, initial, task, functions
 	Continuous procedural
 		Assignment doen't have a duration. Hold value until next assignment.
+
 		assign, deassign. //for reg only 
 		force, release. //for net and reg
+##Implementation
+	assignForce.v
 
 ####Verilog Blocking and Nonblocking
 	 = is used to block.

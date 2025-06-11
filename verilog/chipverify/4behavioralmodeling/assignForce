@@ -1,0 +1,48 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5e792643f820 .scope module, "assignEx" "assignEx" 2 1;
+ .timescale 0 0;
+v0x5e792643fb80_0 .var "a", 1 0;
+S_0x5e792643f9d0 .scope module, "forceEx" "forceEx" 2 12;
+ .timescale 0 0;
+o0x7ba875089048 .functor BUFZ 2, C4<zz>; HiZ drive
+v0x5e7926450140_0 .net "a", 1 0, o0x7ba875089048;  0 drivers
+    .scope S_0x5e792643f820;
+T_0 ;
+    %pushi/vec4 1, 0, 2;
+    %cassign/vec4 v0x5e792643fb80_0;
+    %vpi_call 2 5 "$display", "after assign a = %b", v0x5e792643fb80_0 {0 0 0};
+    %deassign v0x5e792643fb80_0, 0, 2;
+    %pushi/vec4 3, 0, 2;
+    %cassign/vec4 v0x5e792643fb80_0;
+    %delay 5, 0;
+    %vpi_call 2 8 "$display", "after deassign a = %b", v0x5e792643fb80_0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x5e792643f9d0;
+T_1 ;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 2;
+    %force/vec4 v0x5e7926450140_0;
+    %vpi_call 2 17 "$display", "after force a = %b", v0x5e7926450140_0 {0 0 0};
+    %delay 15, 0;
+    %release/net v0x5e7926450140_0, 0, 2;
+    %pushi/vec4 3, 0, 2;
+    %force/vec4 v0x5e7926450140_0;
+    %delay 5, 0;
+    %vpi_call 2 20 "$display", "after release a = %b", v0x5e7926450140_0 {0 0 0};
+    %vpi_call 2 21 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "assignForce.v";
