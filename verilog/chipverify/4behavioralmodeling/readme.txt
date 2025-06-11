@@ -61,25 +61,25 @@ Concurrent blocks assign, generate and module instance don't need always or init
 
 ##Implementation
 	ifelse.v
+	for.v
 	forever.v
 	repeat.v
 	while.v
-	for.v
 	case.v
 
 ####Verilog Conditional Statement
 	<variable> = <condition> ? <expression_1> : <expression_2>;
 	
 ####Functions
-	Like C.
+	Almost like C.
 
-	Constraints:
-	A function cannot contain any time-controlled statements like #, @, wait, posedge, negedge
-	A function cannot start a task because it may consume simulation time, but can call other functions
-	A function should have atleast one input
-	A function cannot have non-blocking assignments or force-release or assign-deassign
-	A function cannot have any triggers
-	A function cannot have an output or inout
+	A function can not:
+		have any time-controlled statements like #, @, wait, posedge, negedge
+		start a task
+		have zero input
+		have non-blocking assignments or force-release or assign-deassign
+		have any triggers
+		have an output or inout
 
 ##Implementation
 	function.v
@@ -87,12 +87,20 @@ Concurrent blocks assign, generate and module instance don't need always or init
 ####Verilo Tasks
 	What functions can't do, tasks can.
 	Task is general version of function.
+	A task can be automatic by invocating automatic.
+
+	Tasks can be disabled using the disable keyword.
 
 ##Implementation
 	task.v
+	triggerInTask.v
 
 ####Verilog Parameters
-	Like constants.
+	Like constants in C.
+	parameter name = value;
+
+##Implements
+	parameters.v
 
 ####Verilog Delay Control
 
