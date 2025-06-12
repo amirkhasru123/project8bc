@@ -1,12 +1,14 @@
 ####Gate Level Simulation
 	or(out,a,b,...)
 	and(out,a,b,...)
+	not(out,a)
+	nor(out,a,b,...)
+	nand(out,a,b,...)
 	xor(out,a,b,...)
 	xnor(out,a,b,...)
-	not(out,a)
-	nand(out,a,b,...)
-	nor(out,a,b,...)
+
 	buf u0(out, in) //output = input
+
 //dind't know about functions mentioned below
 	bufif1 u0(out, in, control)
 	notif1 u0(out, in, control)	
@@ -16,7 +18,12 @@
 #Implementation
 	or.v
 	and.v
+	not.v
+	nor.v
+	nand.v
 	xor.v
+	xnor.v
+
 	buf.v
 
 ####Switch Level Implementation

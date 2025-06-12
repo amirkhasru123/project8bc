@@ -13,7 +13,7 @@ module tb;
         $monitor("%b %b = %b", a, b, x); 
         for (i = 0; i < 4; i++) begin
             {a, b} = i;                
-           	#10 //Still don't know why delay is required. Without this code will not run properly.
+           	#10
         end
     end
 endmodule

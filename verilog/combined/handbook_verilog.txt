@@ -258,6 +258,14 @@ Special Functions
 	$finish
 	Finish the command
 
+	Gate Level Functions
+	or(out,a,b,...)
+	and(out,a,b,...)
+	not(out,a)
+	nor(out,a,b,...)
+	nand(out,a,b,...)
+	xor(out,a,b,...)
+	xnor(out,a,b,...)
 #####################
 Verilo Tasks
 	What functions can't do, tasks can.
