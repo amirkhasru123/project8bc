@@ -1,23 +1,20 @@
-module des (input d,ctrl,output outn,outp);
-
-  nmos(outn,d,ctrl);
-  pmos (outp,d,ctrl);
+module cmos_inverter(input a,output y);
+    wire w;
+    supply1 vdd;
+    supply0 gnd;
+    nmos n1(y,gnd,a);
+    pmos p1(y,vdd,a);
 endmodule
 
-module tb;
-  reg d,ctrl;
-  wire outn,outp;
+module tb_cmos_inverter;
+    reg a;
+    wire y;
 
-  des u0(.d(d),.ctrl(ctrl),.outn(outn),.outp(outp));
+    cmos_inverter uut(.a(a),.y(y));
 
-  initial begin
-    {d,ctrl}<=0;
-
-    $monitor ("T=%0t d=%0b ctrl=%0b outn=%0b outp=%0b", $time, d, ctrl, outn, outp);
-
-    #10 d <= 1;
-    #10 ctrl <= 1;
-    #10 ctrl <= 0;
-    #10 d <= 0;
-  end
+    initial begin
+        a = 0; #10; $display("%b %b", a, y); //pmos will turn on
+        a = 1; #10; $display("%b %b", a, y); //nmos will turn on
+        $finish;
+    end
 endmodule

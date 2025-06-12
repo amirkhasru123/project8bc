@@ -1,0 +1,103 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5cd3f98af030 .scope module, "orGate" "orGate" 2 47;
+ .timescale 0 0;
+v0x5cd3f98d9380_0 .var "a", 0 0;
+v0x5cd3f98d9450_0 .var "b", 0 0;
+v0x5cd3f98d9520_0 .net "y", 0 0, L_0x5cd3f98d9da0;  1 drivers
+S_0x5cd3f98c55a0 .scope module, "dut" "or_gate_wrapper" 2 51, 2 43 0, S_0x5cd3f98af030;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+UDP_my_or_gate .udp/comb "my_or_gate", 2
+ ,"1?1"
+ ,"?11"
+ ,"000";
+L_0x5cd3f98d9da0 .udp UDP_my_or_gate, v0x5cd3f98d9380_0, v0x5cd3f98d9450_0;
+v0x5cd3f98c2060_0 .net "a", 0 0, v0x5cd3f98d9380_0;  1 drivers
+v0x5cd3f98d91a0_0 .net "b", 0 0, v0x5cd3f98d9450_0;  1 drivers
+v0x5cd3f98d9260_0 .net "y", 0 0, L_0x5cd3f98d9da0;  alias, 1 drivers
+S_0x5cd3f98c5410 .scope module, "testbench" "testbench" 2 16;
+ .timescale 0 0;
+v0x5cd3f98d9b00_0 .var "a", 0 0;
+v0x5cd3f98d9bd0_0 .var "b", 0 0;
+v0x5cd3f98d9ca0_0 .net "y", 0 0, L_0x5cd3f98e9fb0;  1 drivers
+S_0x5cd3f98d9620 .scope module, "uut3" "and_gate_wrapper" 2 20, 2 12 0, S_0x5cd3f98c5410;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+UDP_my_and_gate .udp/comb "my_and_gate", 2
+ ,"0?0"
+ ,"?00"
+ ,"111";
+L_0x5cd3f98e9fb0 .udp UDP_my_and_gate, v0x5cd3f98d9b00_0, v0x5cd3f98d9bd0_0;
+v0x5cd3f98d9850_0 .net "a", 0 0, v0x5cd3f98d9b00_0;  1 drivers
+v0x5cd3f98d98f0_0 .net "b", 0 0, v0x5cd3f98d9bd0_0;  1 drivers
+v0x5cd3f98d99b0_0 .net "y", 0 0, L_0x5cd3f98e9fb0;  alias, 1 drivers
+    .scope S_0x5cd3f98af030;
+T_0 ;
+    %vpi_call 2 54 "$display", "Displaying Or Gate" {0 0 0};
+    %vpi_call 2 55 "$monitor", "%0t\011%b\011%b\011%b", $time, v0x5cd3f98d9380_0, v0x5cd3f98d9450_0, v0x5cd3f98d9520_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5cd3f98d9380_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5cd3f98d9450_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5cd3f98d9380_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5cd3f98d9450_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5cd3f98d9380_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5cd3f98d9450_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5cd3f98d9380_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5cd3f98d9450_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 60 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x5cd3f98c5410;
+T_1 ;
+    %vpi_call 2 23 "$display", "Displaying And Gate" {0 0 0};
+    %vpi_call 2 24 "$monitor", "%0t\011%b\011%b\011%b", $time, v0x5cd3f98d9b00_0, v0x5cd3f98d9bd0_0, v0x5cd3f98d9ca0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5cd3f98d9b00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5cd3f98d9bd0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5cd3f98d9b00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5cd3f98d9bd0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5cd3f98d9b00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5cd3f98d9bd0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5cd3f98d9b00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5cd3f98d9bd0_0, 0, 1;
+    %delay 10, 0;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "udp.v";

@@ -1,0 +1,70 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x57db83d51b10 .scope module, "tb_des" "tb_des" 2 8;
+ .timescale -9 -12;
+v0x57db83d652d0_0 .var "a", 0 0;
+v0x57db83d65390_0 .var "b", 0 0;
+v0x57db83d65460_0 .net "out1", 0 0, L_0x57db83d65630;  1 drivers
+v0x57db83d65560_0 .net8 "out2", 0 0, L_0x57db83d658d0;  1 drivers, strength-aware
+S_0x57db83d51ca0 .scope module, "uut" "des" 2 12, 2 3 0, S_0x57db83d51b10;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "out1";
+    .port_info 3 /OUTPUT 1 "out2";
+L_0x57db83d65630/d .functor AND 1, v0x57db83d652d0_0, v0x57db83d65390_0, C4<1>, C4<1>;
+L_0x57db83d65630 .delay 1 (2000,3000,2000) L_0x57db83d65630/d;
+L_0x57db83d658d0/d .functor BUFIF0 1, v0x57db83d652d0_0, v0x57db83d65390_0, C4<0>, C4<0>;
+L_0x57db83d658d0 .delay 1 (4000,5000,4000) L_0x57db83d658d0/d;
+v0x57db83d51ef0_0 .net "a", 0 0, v0x57db83d652d0_0;  1 drivers
+v0x57db83d64fd0_0 .net "b", 0 0, v0x57db83d65390_0;  1 drivers
+v0x57db83d65090_0 .net "out1", 0 0, L_0x57db83d65630;  alias, 1 drivers
+v0x57db83d65160_0 .net8 "out2", 0 0, L_0x57db83d658d0;  alias, 1 drivers, strength-aware
+    .scope S_0x57db83d51b10;
+T_0 ;
+    %vpi_call 2 15 "$monitor", "%4t\011 %b %b | %b %b", $time, v0x57db83d652d0_0, v0x57db83d65390_0, v0x57db83d65460_0, v0x57db83d65560_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x57db83d652d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x57db83d65390_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x57db83d652d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x57db83d65390_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x57db83d652d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x57db83d65390_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x57db83d652d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x57db83d65390_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x57db83d652d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x57db83d65390_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x57db83d652d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x57db83d65390_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 22 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "twoDelay.v";
