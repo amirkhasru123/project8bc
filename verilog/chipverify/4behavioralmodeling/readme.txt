@@ -140,7 +140,7 @@ Note: Don't understand specify.
 	delaycontrol.v
 	
 ####Verilog Hierarchial Reference Scope
-	To avoid scope collision like C.
+	To avoid scope collision like C???
 
 Note: I think currently I'm at the surface level of Verilog to understand such subtle idea. May be, I will focus here later.
 
