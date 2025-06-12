@@ -1,4 +1,4 @@
-####Gate Level Simulation
+####Gate Level Modeling 
 	or(out,a,b,...)
 	and(out,a,b,...)
 	not(out,a)
@@ -7,13 +7,17 @@
 	xor(out,a,b,...)
 	xnor(out,a,b,...)
 
-	buf u0(out, in) //output = input
+	//output = input
+	buf(out,in) 
+	//Like buff but when control=1
+	bufif1(out,in,control) 
+	//Like buff but when control=0
+	bufif0(out,in,control)
 
-//dind't know about functions mentioned below
-	bufif1 u0(out, in, control)
-	notif1 u0(out, in, control)	
-	bufif0 u0(out, in, control)
-	notif0 u0(out, in, control)
+	//Like not when control=1
+	notif1(out,in,control)	
+	//Like not when control=0
+	notif0(out,in,control)
 
 #Implementation
 	or.v
@@ -24,7 +28,12 @@
 	xor.v
 	xnor.v
 
-	buf.v
+	buf.v 
+	bufif1.v 
+	bufif1.v 
+
+	notif1.v 
+	notif0.v
 
 ####Switch Level Implementation
 	Need to learn more. Come back later.

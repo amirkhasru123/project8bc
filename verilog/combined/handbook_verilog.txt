@@ -266,6 +266,13 @@ Special Functions
 	nand(out,a,b,...)
 	xor(out,a,b,...)
 	xnor(out,a,b,...)
+
+	buf(out,a) //input = output
+	bufif1(out,in,control) //buf, when control=1
+	bufif0 u0(out, in, control) //buff, when control=0	
+	notif1(out,in,control) //not, when control=1 
+	notif0 u0(out, in, control) //not, when control=0
+
 #####################
 Verilo Tasks
 	What functions can't do, tasks can.

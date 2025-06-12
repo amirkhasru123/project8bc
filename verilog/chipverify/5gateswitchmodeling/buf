@@ -7,36 +7,36 @@
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
 :vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
-S_0x60b4bff05260 .scope module, "test" "test" 2 5;
+S_0x575d7ab83260 .scope module, "test" "test" 2 5;
  .timescale 0 0;
-v0x60b4bff15000_0 .var "a", 0 0;
-v0x60b4bff150a0_0 .var/i "i", 31 0;
-v0x60b4bff15160_0 .net "x", 0 0, L_0x60b4bff15260;  1 drivers
-S_0x60b4bff053f0 .scope module, "dut" "bufgate" 2 10, 2 1 0, S_0x60b4bff05260;
+v0x575d7ab93000_0 .var "a", 0 0;
+v0x575d7ab930a0_0 .var/i "i", 31 0;
+v0x575d7ab93160_0 .net "x", 0 0, L_0x575d7ab93260;  1 drivers
+S_0x575d7ab833f0 .scope module, "dut" "bufgate" 2 10, 2 1 0, S_0x575d7ab83260;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "a";
     .port_info 1 /OUTPUT 1 "x";
-L_0x60b4bff15260 .functor BUF 1, v0x60b4bff15000_0, C4<0>, C4<0>, C4<0>;
-v0x60b4bff055d0_0 .net "a", 0 0, v0x60b4bff15000_0;  1 drivers
-v0x60b4bff14ee0_0 .net "x", 0 0, L_0x60b4bff15260;  alias, 1 drivers
-    .scope S_0x60b4bff05260;
+L_0x575d7ab93260 .functor BUF 1, v0x575d7ab93000_0, C4<0>, C4<0>, C4<0>;
+v0x575d7ab835d0_0 .net "a", 0 0, v0x575d7ab93000_0;  1 drivers
+v0x575d7ab92ee0_0 .net "x", 0 0, L_0x575d7ab93260;  alias, 1 drivers
+    .scope S_0x575d7ab83260;
 T_0 ;
-    %vpi_call 2 13 "$monitor", "%b = %b", v0x60b4bff15000_0, v0x60b4bff15160_0 {0 0 0};
+    %vpi_call 2 13 "$monitor", "%b = %b", v0x575d7ab93000_0, v0x575d7ab93160_0 {0 0 0};
     %pushi/vec4 0, 0, 32;
-    %store/vec4 v0x60b4bff150a0_0, 0, 32;
+    %store/vec4 v0x575d7ab930a0_0, 0, 32;
 T_0.0 ;
-    %load/vec4 v0x60b4bff150a0_0;
+    %load/vec4 v0x575d7ab930a0_0;
     %cmpi/s 2, 0, 32;
     %jmp/0xz T_0.1, 5;
-    %load/vec4 v0x60b4bff150a0_0;
+    %load/vec4 v0x575d7ab930a0_0;
     %pad/s 1;
-    %store/vec4 v0x60b4bff15000_0, 0, 1;
+    %store/vec4 v0x575d7ab93000_0, 0, 1;
     %delay 10, 0;
     ; show_stmt_assign_vector: Get l-value for compressed += operand
-    %load/vec4 v0x60b4bff150a0_0;
+    %load/vec4 v0x575d7ab930a0_0;
     %pushi/vec4 1, 0, 32;
     %add;
-    %store/vec4 v0x60b4bff150a0_0, 0, 32;
+    %store/vec4 v0x575d7ab930a0_0, 0, 32;
     %jmp T_0.0;
 T_0.1 ;
     %end;
