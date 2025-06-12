@@ -110,21 +110,38 @@ Concurrent blocks assign, generate and module instance don't need always or init
 			//code
 		endspecify
 
+Note: Don't understand specify.
+
 ##Implements
 	parameters.v
 	specify.v
 
 ####Verilog Delay Control
+	Delay(direct time delay)
+		Discussed later in this file.
+	Event control.
+		posedge, negedge	
+		Custom control can be set by named events.
+		The sensitivity list @(list) can be used to for force delay.
+		Level sensitive event control wait can also be used here.
 
 ##Implementation
-	delaycontrol.v
 	eventcontrol.v
 	namedevents.v
 	wait.v
 
 ####Inter Or Intra Delay
-	With the use of #.
+	Inter-assignment delay
+	#<delay> <LHS> = <RHS>
+	Intra-assignment delay
+	<LHS> = #<delay> <RHS>
 
+##Implementation
+	delaycontrol.v
+	
 ####Verilog Hierarchial Reference Scope
 	To avoid scope collision like C.
-	Will learn later.
+
+Note: I think currently I'm at the surface level of Verilog to understand such subtle idea. May be, I will focus here later.
+
+Last Update: 12 July, 2025
