@@ -4,23 +4,23 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 ####################
 Most of the codes in Verilog remain inside of modules.
-	module module_name(port_lists);
+	module module_name (port_list);
 	endmodule
 
 ####################
-Port_lists can be empty.
+Port_list might be empty.
 	module module_name;
 	endmodule
 
-#####################
-Module ports can be of three types: input, output, inout.
+####################
+Ports can be of three types: input, output, inout.
 
-#####################
-Passing data from module to module is possible.
-	target_module instance_name(.port_target(.port_current)
+####################
+Passing data from one module to another module is possible.
+	target_module instance_name (.port_target(.port_current));
 
-#####################
-By default are unsigned. For signed ports use signed keyword.
+####################
+By default ports are unsigned. Use 'signed' keyword to indicate signed ports.
 
 ####################
 Every line is terminated with seicolon.
@@ -44,12 +44,12 @@ Multiple line comments can't be nested.
 	*/
 
 ####################
-Single line comments can be double slashed multiple times.	//This is a comment.
+Repeating double slash maintains commenting.
 	////This is the same comment.
 	////////This is also the same comment.
 
 ####################
-White spaces (spaces, tabs, newlines, formfeed) are ignored. All the following lines are same.
+White spaces (spaces, tabs, newlines, formfeed) are ignored. 
 	$display("amir");
 	  $display("amir");
    		  $display("amir");
@@ -57,7 +57,7 @@ White spaces (spaces, tabs, newlines, formfeed) are ignored. All the following l
 		  $display("amir");
 
 ####################
-Formfeed is slash f. It indicates printer output.
+Formfeed (\f) indicates printer output.
 	$display("\famir");
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -65,32 +65,32 @@ Different Data
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 ####################
-Containers contain contents. Like contents (data), like containers (identifiers).
+Like contents (data), like containers (identifiers).
 
 ####################
-Containers and contents have the same size. Otherwise data overflow or underflow may happen.
+Containers and contents must have the same size. Otherwise data overflow or underflow may happen.
 	reg [4*8:1] name = "amir"; //in UNIX, each character is of one byte. "amir" is content and name is container. Size of amir = size of name.
 
 ####################
-To show the contents, we specify its nature. string = %s, time / realtime = %t, real = %f. 
+Baseless numbers are decimals. Sizeless numbers match size from data.
+
+####################
+To identify the contents, we use special symbols. For string = %s, time / realtime = %t, real = %f. 
 
 ####################
 For integers, specification depends on base_format.
 	[size]'[base_format][number]. 
-	%b = binary, %d = decimal, %o = octal, %h = hexadecimal
+	For %b = binary, %d = decimal, %o = octal, %h = hexadecimal.
 
 ####################
-For negative number add a '-' sign before size.
-
-####################
-Baseless numbers are decimals. Sizeless numbers match size from data.
+For negative numbers, add '-' sign before size.
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 Modifiers
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 ####################
-Many types of Nets
+We've 12 types of Nets
 	wire = multiple driver issue 
 	uwire = single driver ensured 
 
@@ -110,24 +110,26 @@ Many types of Nets
 	trireg = not supported by iverilog
 
 ##################
-Many types of variables
+We've 5 types of identifiers.
 	reg
 	integer
 	time 
 	real
 	realtime
 
-#####################
-Net strength
-	assign (strength1,strength0) net = expression;
+####################
+We've 10 types of net strength.
 	supply1, supply0, strong1, strong0, weak1, weak0, pull0, pull1, highz0, highz1
-	1 = true/up
-	0 = false/down
+
 	Power table: supply, strong, pull, weak, highz
 
-#####################
-Verilog Parameters
-	Like constants in C.
+	1 = true/up
+	0 = false/down
+
+	assign (strength1,strength0) net = expression;
+
+####################
+Verilog Parameters ar like C constants.
 	parameter name = value;
 
 	3 types of parameters.
@@ -145,57 +147,61 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 Array
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-#####################
+####################
 Scalar & Vector
-	1 bit container is net
-	Multiple bit net is vector
+	1 bit container is net.
+	Multiple bit net is vector.
 
-	We can perform operation directly to a bit
-	[a:b] can be used to part select
+	We can perform operation directly to a bit.
+	[a:b] can be used to part select.
 
-#####################
+####################
 Verilog Array
 	An array declaration of a net or variable can be either scalar or vector.
 	Like multidimensional arry in C.
+
 	type range array_name size_range
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 Operators
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-#####################
-Operators
+####################
+3 types of operators are available in Verilog.
 	Unary = left side operators
 	+, -, !, ~, &, |, ^, ~&, ~|, ~^, ^~
+
 	Binary = in between operators 
 	+, -, *, /, %, **, ==, !=, ===, !==, >, >=, <, <=, &&, ||, &, |, ^, ^~, ~^, <<, >>, <<<, >>>
+
 	Conditional = 3 parts operators
 	condition ? one : two;
 
-#####################
+####################
 {} is uded to concatenate and replicate.
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 We have data, operators. So we can perform opertions. Oprations are nothing but process.
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-#####################
-We can fork(pause) and join(resume) process in verilog.
+####################
+We can fork (pause) and join (resume) process in Verilog.
 	fork
 		//code
 	join
 
-#####################
+####################
 You can also block and not block code.
 	= block code
 	<= not block code
 
-#####################
-assign, deassign will assign and deassign a var for reg (inside procedural)
+####################
+assign, deassign will assign and deassign a var for reg (inside procedural).
+
 force, release will do same for net and reg.
 
-#####################
-Note: Procedural blocks must be inside always or initial.
+####################
+Procedural blocks must be inside always or initial.
 Concurrent blocks assign, generate and module instance don't need always or initial.
 	if-else-if
 	Just like C. 
@@ -215,19 +221,18 @@ Concurrent blocks assign, generate and module instance don't need always or init
 	case
 	Like C.
 
-#####################
-Verilog Gate Delay
-	Rise delay = 1 from other state	
-	Fall delay = 0 from other state
-	Turn-off delay = z from other state
-	
-	3 types of delay.
+####################
+Verilog gate delay is of 3 types.
 	One delay
 		#(delay)
 	Two delay
-		#(rise,fall)
+		#(rise, fall)
 	Three delay
-		#(rise,fall,turn-off)	
+		#(rise, fall, turn-off)	
+
+	Rise delay = 1 from other state	
+	Fall delay = 0 from other state
+	Turn-off delay = z from other state
 
 	min:typ:max can be used to rise, fall, turn-off
 
@@ -235,7 +240,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 Functions
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-#####################
+####################
 Functions in Verilog are like functions in C.
 	function range name;
 		ports;
@@ -244,14 +249,14 @@ Functions in Verilog are like functions in C.
 		end
 	endfunction
 
-#####################
+####################
 Return type of a function in Verilog can only be wire or reg.
 The turn type is not mentioned in the def.
 	function [automatic] [return_type] name ([port_list]);
 		[statements]
 	endfunction
 
-#####################
+####################
 A function can not:
 	have any time-controlled statements like #, @, wait, posedge, negedge
 	start a task
@@ -260,13 +265,11 @@ A function can not:
 	have any triggers
 	have an output or inout
 
-#####################
+####################
 keyword automatic will make the function reentrant.It is useful for recursive functions and when the same function is executed concurrently by N processes when forked.
 
-#####################
-User-Defined Primitive
-	When you don't have logic derived, you may have use truth table directly.
-
+####################
+User-defined primitive uses truth table directly.
 	0 Logic 0
 	1 Logic 1
 	x Unknown
@@ -279,7 +282,7 @@ User-Defined Primitive
 	p Potential positive edge on input
 	n Potential falling edge on input
 
-#####################
+####################
 Special Functions
 	$display("text")
 	Displays texts with a return.
@@ -309,7 +312,7 @@ Special Functions
 	nmos (out, gnd, ncontrol)
 	cmos (out, gnd/vdd, ncontrol, pcontrol)
 
-#####################
+####################
 Verilo Tasks
 	What functions can't do, tasks can.
 	Task is general version of function.
@@ -317,7 +320,7 @@ Verilo Tasks
 
 	Tasks can be disabled using the disable keyword.
 
-#####################
+####################
 Verilog Delay Control
 	Delay(direct time delay)
 		Inter-assignment delay
