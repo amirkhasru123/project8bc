@@ -215,6 +215,22 @@ Concurrent blocks assign, generate and module instance don't need always or init
 	case
 	Like C.
 
+#####################
+Verilog Gate Delay
+	Rise delay = 1 from other state	
+	Fall delay = 0 from other state
+	Turn-off delay = z from other state
+	
+	3 types of delay.
+	One delay
+		#(delay)
+	Two delay
+		#(rise,fall)
+	Three delay
+		#(rise,fall,turn-off)	
+
+	min:typ:max can be used to rise, fall, turn-off
+
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 Functions
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -248,6 +264,22 @@ A function can not:
 keyword automatic will make the function reentrant.It is useful for recursive functions and when the same function is executed concurrently by N processes when forked.
 
 #####################
+User-Defined Primitive
+	When you don't have logic derived, you may have use truth table directly.
+
+	0 Logic 0
+	1 Logic 1
+	x Unknown
+	? Logic 0, 1 or x 
+	- No change
+	ab Change in value from a to b 
+	* Same as ??
+	r Same as 01 -> rising edge on input 
+	f Same as 10 -> falling edge on input 
+	p Potential positive edge on input
+	n Potential falling edge on input
+
+#####################
 Special Functions
 	$display("text")
 	Displays texts with a return.
@@ -259,19 +291,23 @@ Special Functions
 	Finish the command
 
 	Gate Level Functions
-	or(out,a,b,...)
-	and(out,a,b,...)
-	not(out,a)
-	nor(out,a,b,...)
-	nand(out,a,b,...)
-	xor(out,a,b,...)
-	xnor(out,a,b,...)
+	or (out, a, b, ...)
+	and (out, a, b, ...)
+	not (out, a)
+	nor (out, a, b, ...)
+	nand(out, a, b, ...)
+	xor (out, a, b, ...)
+	xnor (out, a, b, ...)
 
-	buf(out,a) //input = output
-	bufif1(out,in,control) //buf, when control=1
-	bufif0 u0(out, in, control) //buff, when control=0	
-	notif1(out,in,control) //not, when control=1 
-	notif0 u0(out, in, control) //not, when control=0
+	buf (out, a) //input = output
+	bufif1 (out, in, control) //buf, when control=1
+	bufif0 (out, in, control) //buff, when control=0	
+	notif1 (out, in, control) //not, when control=1 
+	notif0 (out, in, control) //not, when control=0
+
+	pmos (out, vdd, pcontrol)
+	nmos (out, gnd, ncontrol)
+	cmos (out, gnd/vdd, ncontrol, pcontrol)
 
 #####################
 Verilo Tasks

@@ -1,23 +1,23 @@
 ####Gate Level Modeling 
-	or(out,a,b,...)
-	and(out,a,b,...)
-	not(out,a)
-	nor(out,a,b,...)
-	nand(out,a,b,...)
-	xor(out,a,b,...)
-	xnor(out,a,b,...)
+	or (out, a, b, ...)
+	and (out, a, b, ...)
+	not (out, a)
+	nor (out, a, b, ...)
+	nand (out, a, b, ...)
+	xor (out, a, b, ...)
+	xnor (out, a, b, ...)
 
 	//output = input
-	buf(out,in) 
+	buf (out, in) 
 	//buff when control=1
-	bufif1(out,in,control) 
+	bufif1 (out, in, control) 
 	//buff when control=0
-	bufif0(out,in,control)
+	bufif0 (out, in, control)
 
 	//not when control=1
-	notif1(out,in,control)	
+	notif1 (out, in, control)	
 	//not when control=0
-	notif0(out,in,control)
+	notif0 (out, in, control)
 
 #Implementation
 	or.v
@@ -87,4 +87,4 @@ Note: So I'm ready to do some projects now.
 	andGate.v
 	orGate.v
 
-Last Update: 12 Jun, 2025
+Last Update: 13 Jun, 2025
