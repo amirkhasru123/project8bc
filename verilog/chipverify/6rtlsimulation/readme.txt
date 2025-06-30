@@ -1,4 +1,6 @@
 ####Verilog Testbench Simulation
+	RTL = register transfer level
+	Verilog is defined in terms of a discrete event execution model
 
 ##Code Implementation
 	$dumpfile(filename.vcd)
