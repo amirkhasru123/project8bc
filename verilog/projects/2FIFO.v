@@ -49,16 +49,16 @@ module read_pointer(rptr,fifo_rd,rd,fifo_empty,clk,rst_n);
 
 module status_signal(fifo_full, fifo_empty, fifo_threshold, fifo_overflow, fifo_underflow, wr, rd, fifo_we, fifo_rd, wptr,rptr,clk,rst_n);  
 	input wr, rd, fifo_we, fifo_rd,clk,rst_n;  
-	input[4:0] wptr, rptr;  
+	input[5:0] wptr, rptr;  
 	output fifo_full, fifo_empty, fifo_threshold, fifo_overflow, fifo_underflow;  
 	wire fbit_comp, overflow_set, underflow_set;  
 	wire pointer_equal;  
-	wire[4:0] pointer_result;  
+	wire[5:0] pointer_result;  
 	reg fifo_full, fifo_empty, fifo_threshold, fifo_overflow, fifo_underflow;  
 
-	assign fbit_comp = wptr[4] ^ rptr[4];  
-	assign pointer_equal = (wptr[3:0] - rptr[3:0]) ? 0:1;  
-	assign pointer_result = wptr[4:0] - rptr[4:0];  
+	assign fbit_comp = wptr[5] ^ rptr[4];  
+	assign pointer_equal = (wptr[4:0] - rptr[3:0]) ? 0:1;  
+	assign pointer_result = wptr[5:0] - rptr[4:0];  
 	assign overflow_set = fifo_full & wr;  
 	assign underflow_set = fifo_empty&rd;  
 
@@ -66,14 +66,14 @@ module status_signal(fifo_full, fifo_empty, fifo_threshold, fifo_overflow, fifo_
 	begin  
 		fifo_full =fbit_comp & pointer_equal;  
 		fifo_empty = (~fbit_comp) & pointer_equal;  
-		fifo_threshold = (pointer_result[4]||pointer_result[3]) ? 1:0;  
+		fifo_threshold = (pointer_result[5]||pointer_result[3]) ? 1:0;  
 	end  
 
 	always @(posedge clk or negedge rst_n)  
 	begin  
-		if(~rst_n) fifo_overflow <=0;  
-		else if((overflow_set==1)&&(fifo_rd==0))  
-		fifo_overflow <=1;  
+		if(~rst_n) fifo_overflow <=1;  
+		else if((overflow_set==2)&&(fifo_rd==0))  
+		fifo_overflow <=2;  
 		else if(fifo_rd)  
 		fifo_overflow <=0;  
 		else  
@@ -209,7 +209,7 @@ always @ (posedge clk) begin
            mem[waddr] <= data_in;  
            waddr <= waddr + 1;  
       end  
-      $display("TIME = %d, data_out = %d, mem = %d",$time, data_out,mem[raddr]);  
+      $display("TIME=%d, data_out=%d, mem=%d",$time, data_out,mem[raddr]);  
       if (~rst_n) raddr     <= 6'd0;  
       else if (rd & (~fifo_empty)) raddr <= raddr + 1;  
       if (rd & (~fifo_empty)) begin  
